@@ -1,0 +1,41 @@
+/* ============================================================
+   TOKENS — paleta, tipografia e escala.
+   Mude aqui para mudar a página inteira.
+   ============================================================ */
+
+:root {
+  /* --- fundos (do mais escuro ao mais claro) --- */
+  --void:        #07070F;
+  --deep:        #0C0A1A;
+  --nebula:      #120E28;
+  --panel:       #151230;
+  --panel-lift:  #1B1740;
+  --edge:        #272151;
+  --edge-soft:   #1E1A42;
+
+  /* --- texto --- */
+  --text:        #EDEBFA;
+  --text-dim:    #A9A3D0;
+  --text-faint:  #6F6A9B;
+
+  /* --- acentos --- */
+  --violet:      #7B5CFF;
+  --violet-hot:  #9D7BFF;
+  --cobalt:      #3B82F6;
+  --ice:         #5EEAD4;  /* reservado para números confirmados */
+  --amber:       #E0A458;  /* reservado para ressalvas */
+
+  --glow-violet: rgba(123, 92, 255, 0.35);
+  --glow-cobalt: rgba(59, 130, 246, 0.28);
+
+  /* --- layout --- */
+  --measure: 66ch;
+
+  /* --- escala tipográfica (fluida) --- */
+  --f--1: clamp(0.78rem, 0.76rem + 0.1vw, 0.85rem);
+  --f-0:  clamp(1rem, 0.96rem + 0.18vw, 1.1rem);
+  --f-1:  clamp(1.18rem, 1.08rem + 0.45vw, 1.5rem);
+  --f-2:  clamp(1.7rem, 1.4rem + 1.4vw, 2.8rem);
+  --f-3:  clamp(2.4rem, 1.7rem + 3.2vw, 4.6rem);
+  --f-4:  clamp(3rem, 1.6rem + 6.4vw, 7.5rem);
+}

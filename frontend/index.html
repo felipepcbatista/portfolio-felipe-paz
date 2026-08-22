@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Felipe Paz Carvalho Batista — operações, produto e dado. Cases com impacto medido e metodologia registrada.">
+  <meta name="author" content="Felipe Paz Carvalho Batista">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Felipe Paz Carvalho Batista">
+  <meta property="og:description" content="Processo que vira número. Número que vira decisão.">
+
+  <title>Felipe Paz Carvalho Batista</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/cases.css">
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<canvas id="sky"></canvas>
+<div class="aurora aurora-a"></div>
+<div class="aurora aurora-b"></div>
+
+<div class="page">
+
+  <!-- ============ NAV ============ -->
+  <nav id="nav">
+    <div class="wrap nav-in">
+      <div class="brand"><span class="brand-dot"></span> Felipe Paz</div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+          <a href="#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
+          <a href="#cases" data-i18n="nav.cases">Cases</a>
+          <a href="#metodo" data-i18n="nav.metodo">Método</a>
+          <a href="#formacao" data-i18n="nav.formacao">Formação</a>
+          <a href="#contato" data-i18n="nav.contato">Contato</a>
+        </div>
+        <button type="button" class="lang-toggle" id="langToggle" data-i18n-aria="lang.toggleAria" aria-label="Switch to English">
+          <span data-i18n="lang.toggle">EN</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero wrap" id="inicio">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-role">
+          <span class="chip" data-i18n="hero.chip1">Financial Ops</span>
+          <span class="chip" data-i18n="hero.chip2">Produto · billing</span>
+          <span class="chip" data-i18n="hero.chip3">Dados e BI</span>
+        </div>
+
+        <h1><span data-i18n="hero.title1">Processo que vira número.</span><br><span class="grad" data-i18n="hero.title2">Número que vira decisão.</span></h1>
+
+        <p class="hero-lede" data-i18n="hero.lede">
+          Trabalho na fronteira entre operação, produto e dado — mapeio o processo, encontro a causa
+          raiz no dado, especifico a solução e volto para medir se funcionou. Inclusive quando o
+          dado diz que não.
+        </p>
+
+        <div class="cta-row">
+          <a href="#cases" class="btn btn-solid" data-i18n="hero.cta1">Ver os cases</a>
+          <a href="#contato" class="btn btn-ghost" data-i18n="hero.cta2">Falar comigo</a>
+        </div>
+      </div>
+
+      <div class="portrait-slot">
+        <div class="portrait-ring"></div>
+        <img src="assets/foto-perfil.jpg" alt="Felipe Paz Carvalho Batista" data-i18n-alt="hero.photoAlt">
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE MÉTRICAS ============ -->
+  <div class="orbit">
+    <div class="wrap">
+      <div class="orbit-grid">
+        <div class="orb">
+          <span class="orb-num" data-count="-89.6" data-suffix="%">—</span>
+          <span class="orb-label" data-i18n="orb1.label">Demandas manuais de reemissão de link de pagamento</span>
+          <span class="orb-src" data-i18n="orb1.src">1,50 → 0,16 por dia · n=329</span>
+        </div>
+        <div class="orb">
+          <span class="orb-num" data-count="-77.4" data-suffix="%">—</span>
+          <span class="orb-label" data-i18n="orb2.label">Carga de execução humana na operação financeira</span>
+          <span class="orb-src" data-i18n="orb2.src">6,16 → 1,39 por dia · pós-rampa de adoção</span>
+        </div>
+        <div class="orb">
+          <span class="orb-num" data-count="-47" data-suffix="%">—</span>
+          <span class="orb-label" data-i18n="orb3.label">Pior caso de prazo de recebimento (P90)</span>
+          <span class="orb-src" data-i18n="orb3.src">30 → 16 dias · n=778 faturas</span>
+        </div>
+        <div class="orb">
+          <span class="orb-num" data-count="182" data-suffix="">—</span>
+          <span class="orb-label" data-i18n="orb4.label">Itens de backlog escritos como Product Owner</span>
+          <span class="orb-src" data-i18n="orb4.src">94,8% das issues · 2 semestres</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <!-- ============ SOBRE MIM ============ -->
+    <section id="sobre">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="sobre.eyebrow">Sobre mim</span>
+        <h2 data-i18n="sobre.title">Quem sou e<br>para onde vou</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="prose rv">
+        <p data-i18n="sobre.p1">Sou <strong>Felipe Paz Carvalho Batista</strong>, graduando em Engenharia de Software na PUC Minas e estagiário em Financial Ops. Trabalho na interseção entre operação, produto e dado — a área onde processo, métrica e decisão de negócio se encontram.</p>
+        <p data-i18n="sobre.p2">Comecei em Gestão de Produtos, no domínio de billing, e migrei para a operação financeira. Essa passagem define meu ângulo: conheço tanto a regra que se escreve quanto a rotina que sente o efeito dela.</p>
+        <p data-i18n="sobre.p3">O que me move é <strong>transformar rotina manual em processo medido</strong>. Não me interessa automatizar por automatizar — me interessa saber o número antes, o número depois, e conseguir defender a diferença. É por isso que toda análise que entrego carrega baseline, ressalva metodológica e critério de corte declarado.</p>
+        <p data-i18n="sobre.p4">Meu objetivo é evoluir para posições de liderança em operações e negócio, onde decisão operacional e decisão estratégica são a mesma conversa.</p>
+      </div>
+    </section>
+
+    <!-- ============ TRAJETÓRIA ============ -->
+    <section id="trajetoria">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="traj.eyebrow">Trajetória</span>
+        <h2 data-i18n="traj.title">De construir a regra<br>a operar o efeito dela</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="prose rv">
+        <p data-i18n="traj.intro1">Comecei em <strong>Gestão de Produtos</strong>, no domínio de billing — construindo features de cobrança e do modelo de negócio. Migrei para <strong>Financial Ops</strong>, onde passei a operar o outro lado do que eu mesmo tinha construído: a rotina que sente o efeito de cada decisão de produto.</p>
+        <p data-i18n="traj.intro2">Hoje opero sobre métricas financeiras, análise de dados e processos de negócio — gerenciando o ciclo de ponta a ponta: modelagem, levantamento de dados, otimização e medição.</p>
+      </div>
+
+      <div class="track">
+        <div class="leg rv">
+          <div class="leg-when" data-i18n="leg1.when">ago — set · 2025</div>
+          <div>
+            <h3 data-i18n="leg1.title">Gerente de Projeto · Employ.me</h3>
+            <p data-i18n="leg1.text">Concepção de uma plataforma de empregabilidade jovem em tecnologia no Desafio Liga Jovem do SEBRAE. Discovery estruturado (matriz CSD, personas, mapa de empatia, proposta de valor), documentação em One Pager e PRDs, backlog priorizado por MoSCoW e protótipo interativo — com modelo de negócio híbrido, freemium B2C e institucional B2B. MVP conceitual, não chegou a produção.</p>
+          </div>
+        </div>
+        <div class="leg rv">
+          <div class="leg-when" data-i18n="leg2.when">2025 — 2026</div>
+          <div>
+            <h3 data-i18n="leg2.title">Product Owner · DuZé Pesqueiro (PUC Minas)</h3>
+            <p data-i18n="leg2.text">Condução de produto de ponta a ponta para um cliente externo real, ao longo de dois semestres — elicitação de requisitos, backlog priorizado, modelagem de processos e alinhamento direto com o proprietário do negócio. Premiado como melhor Trabalho Interdisciplinar do curso.</p>
+          </div>
+        </div>
+        <div class="leg rv">
+          <div class="leg-when" data-i18n="leg3.when">2º sem · 2025</div>
+          <div>
+            <h3 data-i18n="leg3.title">Mentor · Engenharia de Software (PUC Minas)</h3>
+            <p data-i18n="leg3.text">Acompanhamento de 4 calouros ao longo do semestre no programa de mentoria do curso — apoio à adaptação à rotina acadêmica e orientação sobre caminhos de carreira em tecnologia, traduzindo o conteúdo do curso em direcionamento para o mercado.</p>
+          </div>
+        </div>
+        <div class="leg rv">
+          <div class="leg-when" data-i18n="leg4.when">Produto</div>
+          <div>
+            <h3 data-i18n="leg4.title">Estágio em Gestão de Produtos</h3>
+            <p data-i18n="leg4.text">Duas frentes. Em <strong>billing</strong>: especificação e construção de features de cobrança e do modelo de negócio de créditos, com contato direto com cliente final. Na <strong>squad de Retenção</strong>, como Associate Product Manager: estratégias de redução de churn tratando <strong>engajamento como leading metric</strong> — o indicador que se move antes do cancelamento e permite agir enquanto ainda há o que reverter —, com condução de dailies, apoio a PRDs e análise de dado para sustentar priorização.</p>
+          </div>
+        </div>
+        <div class="leg rv">
+          <div class="leg-when" data-i18n="leg5.when">Financial Ops · atual</div>
+          <div>
+            <h3 data-i18n="leg5.title">Estágio em Financial Ops</h3>
+            <p data-i18n="leg5.text">Rotina de cobrança, conciliação e atendimento às demandas financeiras internas — e, a partir dela, a reforma dos dois processos que mais consumiam a operação, com <strong>−77% na carga de execução manual</strong> e <strong>−89% nas demandas de reemissão de link</strong>. Modelagem de métricas de negócio (MRR, NMRR, GRR, churn, collections) e construção da camada de BI que dá ao time acesso autônomo a essas leituras.</p>
+          </div>
+        </div>
+        <div class="leg rv">
+          <div class="leg-when" data-i18n="leg6.when">Em curso</div>
+          <div>
+            <h3 data-i18n="leg6.title">Operações e negócio</h3>
+            <p data-i18n="leg6.text">Direção declarada: eficiência operacional com lastro em dado. O objetivo não é acumular ferramenta — é chegar ao ponto em que decisão de operação e decisão de negócio sejam a mesma conversa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CASES ============ -->
+    <section id="cases">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="cases.eyebrow">Cases</span>
+        <h2 data-i18n="cases.title">Processos reformados,<br>com impacto medido</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="cases">
+
+        <!-- CASE 1 -->
+        <article class="case rv">
+          <div class="case-top">
+            <h3 data-i18n="case1.title">Reforma da jornada de pagamento de assinatura</h3>
+            <div class="tags">
+              <span class="chip live" data-i18n="case1.chip1">Em produção desde jun/2026</span>
+              <span class="chip" data-i18n="case1.chip2">Discovery</span>
+              <span class="chip" data-i18n="case1.chip3">BPMN as-is / to-be</span>
+              <span class="chip" data-i18n="case1.chip4">PRD + BDD</span>
+              <span class="chip" data-i18n="case1.chip5">Análise de impacto</span>
+            </div>
+          </div>
+
+          <div class="case-body">
+            <div class="case-story">
+              <p data-i18n="case1.p1">A jornada de pagamento era passiva: cliente com fatura vencida não conseguia se autorregularizar, e qualquer ajuste — reemitir link, trocar método — passava por triangulação manual entre atendimento e financeiro.</p>
+              <p data-i18n="case1.p2">Investigando prazo de recebimento e inadimplência, encontrei uma falha estrutural que ninguém tinha nomeado: <strong>a data que ancorava a inadimplência do cliente era a mesma que controlava a validade do link de pagamento</strong>. Cada vez que um link expirava e era reemitido, a contagem de inadimplência daquele cliente zerava. Na prática, um cliente podia passar meses sem pagar sem nunca acumular ônus — distorcendo reconhecimento de receita e previsão de caixa, e removendo o incentivo para regularizar.</p>
+              <p data-i18n="case1.p3">A solução separou as duas datas em conceitos distintos — âncora imutável de inadimplência e validade regenerável do link — e devolveu ao cliente o autosserviço de reemissão e troca de método. Uma segunda fase deu ao gestor de atendimento uma ferramenta auditável de postergação controlada, com limite por alteração e limite acumulado por fatura, substituindo o caminho informal que corrompia o dado.</p>
+
+              <div class="steps">
+                <div class="step"><span class="step-n">01</span><span data-i18n="case1.step1">Análise exploratória no BI apontou o gap entre emissão e pagamento — e motivou olhar além do sintoma óbvio de "o cliente atrasa".</span></div>
+                <div class="step"><span class="step-n">02</span><span data-i18n="case1.step2">BPMN as-is tornou visíveis as transferências de mão desnecessárias no fluxo real.</span></div>
+                <div class="step"><span class="step-n">03</span><span data-i18n="case1.step3">Matriz CSD com suposições validadas contra dado real antes de avançar, não por percepção.</span></div>
+                <div class="step"><span class="step-n">04</span><span data-i18n="case1.step4">Árvore de oportunidades para priorizar causa raiz sobre sintoma.</span></div>
+                <div class="step"><span class="step-n">05</span><span data-i18n="case1.step5">BPMN to-be desenhado dentro do PRD, validando a eliminação dos gargalos antes de escrever regra de negócio.</span></div>
+                <div class="step"><span class="step-n">06</span><span data-i18n="case1.step6">PRD com escopo faseado, fora-de-escopo explícito e BDD nas regras críticas.</span></div>
+                <div class="step"><span class="step-n">07</span><span data-i18n="case1.step7">Acompanhamento pós-deploy com dado de produção — a etapa que normalmente não acontece.</span></div>
+              </div>
+            </div>
+
+            <div class="case-side">
+              <div class="kpi">
+                <span class="kpi-num">−89,6%</span>
+                <span class="kpi-name" data-i18n="case1.kpi1name">Demandas de reemissão de link</span>
+                <span class="kpi-detail" data-i18n="case1.kpi1detail">1,50/dia (213 dias, n=319) → 0,16/dia (64 dias, n=10). Os tickets residuais são exceções reais — cartão recusado, erro de pagamento — não mais pedido de rotina. A natureza da demanda mudou, não só o volume.</span>
+              </div>
+
+              <div class="kpi">
+                <span class="kpi-num">−47%</span>
+                <span class="kpi-name" data-i18n="case1.kpi2name">Prazo de recebimento no P90</span>
+                <span class="kpi-detail" data-i18n="case1.kpi2detail">A mediana não se moveu: quem já pagava rápido segue igual. O efeito está na cauda de atraso — exatamente o cenário que mais pressiona previsão de caixa.</span>
+              </div>
+
+              <div class="tbl">
+                <div class="tbl-head" data-i18n="case1.tblhead">Prazo de recebimento · PIX e boleto</div>
+                <div class="tbl-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th data-i18n="case1.th1">Período</th>
+                        <th data-i18n="case1.th2">n</th>
+                        <th data-i18n="case1.th3">Média</th>
+                        <th data-i18n="case1.th4">Mediana</th>
+                        <th data-i18n="case1.th5">P90</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td data-i18n="case1.rowbefore">Antes</td><td>648</td><td>10,94 <span data-i18n="case1.d">d</span></td><td>6 <span data-i18n="case1.d">d</span></td><td>30 <span data-i18n="case1.d">d</span></td></tr>
+                      <tr><td data-i18n="case1.rowafter">Depois</td><td>130</td><td class="hi">7,03 <span data-i18n="case1.d">d</span></td><td>6 <span data-i18n="case1.d">d</span></td><td class="hi">16 <span data-i18n="case1.d">d</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="caveat">
+                <b data-i18n="case1.cav1title">Ressalva metodológica</b>
+                <span data-i18n="case1.cav1text">A amostra pós-deploy ainda é curta (~4,5 semanas) e será reavaliada antes de eu tratar esses números como consolidados. Excluí as duas semanas mais recentes por viés de maturação: faturas recentes ainda não pagas não entram na amostra e inflam artificialmente a melhora.</span>
+              </div>
+
+              <div class="caveat">
+                <b data-i18n="case1.cav2title">Lacuna que assumi</b>
+                <span data-i18n="case1.cav2text">Registrei em decisão formal que a correção da âncora de inadimplência ficou sem KPI próprio. O case responde "o cliente paga mais rápido?", mas ainda não responde "a inadimplência real melhorou?". É priorização consciente, não ponto cego.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 2 -->
+        <article class="case rv">
+          <div class="case-top">
+            <h3 data-i18n="case2.title">Automação do fluxo de demandas financeiras</h3>
+            <div class="tags">
+              <span class="chip live" data-i18n="case2.chip1">Em produção desde jun/2026</span>
+              <span class="chip" data-i18n="case2.chip2">Redesenho de processo</span>
+              <span class="chip" data-i18n="case2.chip3">n8n</span>
+              <span class="chip" data-i18n="case2.chip4">SLA e governança</span>
+              <span class="chip" data-i18n="case2.chip5">Medição via API</span>
+            </div>
+          </div>
+
+          <div class="case-body">
+            <div class="case-story">
+              <p data-i18n="case2.p1">Toda demanda financeira recorrente — ajuste de fatura, estorno, mudança de plano, desconto — chegava e era resolvida dentro de um canal de chat: sem formulário estruturado, sem SLA, sem aprovação registrada, e com <strong>execução manual em 100% dos casos</strong> por uma única pessoa.</p>
+              <p data-i18n="case2.p2">Redesenhei o fluxo sobre formulário estruturado e orquestração automatizada. A demanda entra validada — preenchimento incorreto trava e volta ao solicitante por e-mail sem consumir tempo do financeiro —, é roteada por tipo, aguarda aprovação de gestor com SLA definido, e é <strong>executada automaticamente após a aprovação</strong>. O único ponto humano que sobrou no fluxo é a decisão de aprovar ou reprovar.</p>
+              <p data-i18n="case2.p3">O achado que mais me interessa neste case é o que <em>não</em> aconteceu: o volume de demanda não caiu — ficou estável, até levemente maior. Se eu tivesse escolhido "número de tickets" como métrica de sucesso, teria concluído que a automação falhou. A métrica certa era outra: <strong>quanto do volume ainda exige mão humana para ser executado.</strong></p>
+              <p data-i18n="case2.p4">A adoção foi rápida: o ponto de virada acontece na quarta semana, quando a execução manual cai 43% de uma semana para a outra e o volume que corre pelo fluxo automatizado salta de 43 para 64 tickets. Não houve resistência prolongada ao processo novo — houve três semanas de rampa e depois um patamar novo, que é o que reporto como resultado.</p>
+            </div>
+
+            <div class="case-side">
+              <div class="kpi">
+                <span class="kpi-num">−77,4%</span>
+                <span class="kpi-name" data-i18n="case2.kpi1name">Taxa de execução manual</span>
+                <span class="kpi-detail" data-i18n="case2.kpi1detail">6,16 → 1,39 execuções humanas por dia no regime estabilizado (4 semanas pós-rampa). Considerando as 7 semanas completas, incluindo a adoção inicial, a redução é de 66,9% (2,04/dia).</span>
+              </div>
+
+              <div class="kpi">
+                <span class="kpi-num">85,2%</span>
+                <span class="kpi-name" data-i18n="case2.kpi2name">SLA cumprido</span>
+                <span class="kpi-detail" data-i18n="case2.kpi2detail">Na última semana medida, contra 58,1% na primeira — o cumprimento subiu junto com a maturidade do fluxo. Não é melhoria sobre um número anterior: é um controle que passou a existir, já que antes não havia SLA formal a cumprir.</span>
+              </div>
+
+              <div class="kpi">
+                <span class="kpi-num">9,9%</span>
+                <span class="kpi-name" data-i18n="case2.kpi3name">Retrabalho interceptado na entrada</span>
+                <span class="kpi-detail" data-i18n="case2.kpi3detail">36 de 362 submissões voltaram automaticamente ao solicitante por preenchimento incorreto, sem consumir tempo da operação para identificar e devolver.</span>
+              </div>
+
+              <div class="tbl">
+                <div class="tbl-head" data-i18n="case2.tblhead">Execução manual por dia · semana a semana</div>
+                <div class="tbl-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th data-i18n="case2.th1">Semana</th>
+                        <th data-i18n="case2.th2">Chat</th>
+                        <th data-i18n="case2.th3">Automatizado</th>
+                        <th data-i18n="case2.th4">Manual/dia</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>29/06</td><td>18</td><td>36</td><td>2,57</td></tr>
+                      <tr><td>06/07</td><td>20</td><td>31</td><td>2,86</td></tr>
+                      <tr><td>13/07</td><td>23</td><td>43</td><td>3,29</td></tr>
+                      <tr><td>20/07</td><td>13</td><td>64</td><td class="hi">1,86</td></tr>
+                      <tr><td>27/07</td><td>8</td><td>60</td><td class="hi">1,14</td></tr>
+                      <tr><td>03/08</td><td>12</td><td>50</td><td class="hi">1,71</td></tr>
+                      <tr><td>10/08</td><td>6</td><td>37</td><td class="hi">0,86</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="caveat">
+                <b data-i18n="case2.cav1title">Por que corto as 3 primeiras semanas</b>
+                <span data-i18n="case2.cav1text">A adoção do fluxo novo virou de uma semana para a outra: de 3,29 execuções manuais/dia na terceira semana para 1,86 na quarta — queda de 43% em sete dias, com o volume automatizado saltando de 43 para 64 tickets. As três primeiras semanas são rampa de adoção, não regime de operação. Reporto o número estabilizado como principal e o da janela completa junto, para que a escolha do corte seja auditável em vez de silenciosa.</span>
+              </div>
+
+              <div class="caveat">
+                <b data-i18n="case2.cav2title">Ressalva metodológica</b>
+                <span data-i18n="case2.cav2text">A janela pós-automação (49 dias) ainda é curta frente à base pré (229 dias). E o tempo de resolução do período anterior é uma proxy — mede quando a conversa parou de receber mensagem, não necessariamente quando o caso foi resolvido. Mantive porque era o dado disponível, não porque é o ideal.</span>
+              </div>
+
+              <div class="caveat">
+                <b data-i18n="case2.cav3title">Leitura que evito</b>
+                <span data-i18n="case2.cav3text">Este case não mostra "a automação reduziu o trabalho que chega". Mostra que reduziu quanto desse trabalho precisa de mão humana. Comunicar a primeira leitura seria mais impressionante e seria falso.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 3 -->
+        <article class="case rv">
+          <div class="case-top">
+            <h3 data-i18n="case3.title">DuZé Pesqueiro — gestão operacional de ponta a ponta</h3>
+            <div class="tags">
+              <span class="chip award" data-i18n="case3.chip1">Melhor Trabalho Interdisciplinar · PUC Minas</span>
+              <span class="chip" data-i18n="case3.chip2">Product Owner</span>
+              <span class="chip" data-i18n="case3.chip3">Cliente externo real</span>
+              <span class="chip" data-i18n="case3.chip4">Scrumban · 2 semestres</span>
+              <span class="chip" data-i18n="case3.chip5">BPMN · Casos de uso</span>
+            </div>
+          </div>
+
+          <div class="case-body">
+            <div class="case-story">
+              <p data-i18n="case3.p1">O DuZé Pesqueiro é um complexo de lazer real — pesca, eventos, aluguel de equipamentos e hospedagem em chalés — operando com <strong>caderno, planilha isolada e conversa de aplicativo</strong>. Sem histórico de cliente, sem integração entre venda e estoque, sem lista de presença em evento, sem relatório gerencial que não fosse consolidado à mão.</p>
+              <p data-i18n="case3.p2">Atuei como <strong>Product Owner</strong> ao longo de dois semestres, com o proprietário do negócio como stakeholder direto. O trabalho foi de descoberta e tradução: entender uma operação que ninguém tinha descrito formalmente, transformá-la em processo modelado, e daí em backlog executável por um time de seis pessoas.</p>
+              <p data-i18n="case3.p3">Modelei <strong>cinco processos de negócio em BPMN</strong> — usuários, venda e aluguel de equipamentos, eventos, estoque e gestão financeira — cada um com análise da situação atual e oportunidades de melhoria identificadas. Especifiquei documento de visão, casos de uso descritivos, interfaces de usuário e <strong>27 indicadores de desempenho</strong> para o sistema entregar ao dono do negócio, com objetivo, fonte de dado e fórmula de cálculo definidos um a um.</p>
+              <p data-i18n="case3.p4">Na gestão, operei em <strong>Scrumban sobre GitHub Projects</strong>: backlog hierarquizado em Épico → Story → Task, rotulado por persona (turista, operador, administrador) e por vertical de negócio. Sprint planning e review semanais com o time, reunião com o cliente a cada sprint com ata registrada, e templates próprios de issue que exigiam valor de negócio, escopo, fora-de-escopo e critérios de aceite antes de qualquer card entrar em desenvolvimento.</p>
+              <p data-i18n="case3.p5">O sistema foi construído e entregue: <strong>NestJS, React, Prisma e PostgreSQL, containerizado e publicado em AWS ECS Fargate</strong>, com integração de pagamento, autenticação e comunicação em tempo real. O projeto recebeu o prêmio de melhor Trabalho Interdisciplinar do curso de Engenharia de Software da PUC Minas Coração Eucarístico.</p>
+
+              <div class="case-links">
+                <a href="https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti3-9577100-duze" target="_blank" rel="noopener" class="repo-link">
+                  <span data-i18n="case.repo">Ver repositório</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="case-side">
+              <div class="kpi">
+                <span class="kpi-num scope">182</span>
+                <span class="kpi-name" data-i18n="case3.kpi1name">Itens de backlog escritos</span>
+                <span class="kpi-detail" data-i18n="case3.kpi1detail">94,8% de todas as issues dos dois repositórios (182 de 192), estruturadas em Épico → Story → Task e rotuladas por persona e vertical de negócio.</span>
+              </div>
+
+              <div class="kpi">
+                <span class="kpi-num scope">5</span>
+                <span class="kpi-name" data-i18n="case3.kpi2name">Processos modelados em BPMN</span>
+                <span class="kpi-detail" data-i18n="case3.kpi2detail">Usuários, venda e aluguel, eventos, estoque e gestão financeira — cada um com situação atual analisada e oportunidades de melhoria mapeadas.</span>
+              </div>
+
+              <div class="kpi">
+                <span class="kpi-num scope">27</span>
+                <span class="kpi-name" data-i18n="case3.kpi3name">Indicadores especificados</span>
+                <span class="kpi-detail" data-i18n="case3.kpi3detail">Seis famílias de KPI (geral, estoque, aluguéis, vendas, usuários e eventos), cada indicador com objetivo, descrição, fonte de dado e fórmula de cálculo.</span>
+              </div>
+
+              <div class="tbl">
+                <div class="tbl-head" data-i18n="case3.tblhead">Escopo da atuação como PO</div>
+                <div class="tbl-scroll">
+                  <table>
+                    <thead>
+                      <tr><th data-i18n="case3.th1">Artefato</th><th data-i18n="case3.th2">Volume</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td data-i18n="case3.row1">Épicos</td><td class="hi">9</td></tr>
+                      <tr><td data-i18n="case3.row2">User stories</td><td class="hi">39</td></tr>
+                      <tr><td data-i18n="case3.row3">Tasks</td><td class="hi">17</td></tr>
+                      <tr><td data-i18n="case3.row4">Duração</td><td data-i18n="case3.row4v">2 semestres</td></tr>
+                      <tr><td data-i18n="case3.row5">Time</td><td data-i18n="case3.row5v">6 pessoas</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="caveat">
+                <b data-i18n="case3.cav1title">O que este case prova — e o que não prova</b>
+                <span data-i18n="case3.cav1text">Este é um case de <strong>condução de produto</strong>, não de impacto operacional medido. Os 27 indicadores foram especificados para o cliente medir o negócio dele; não houve baseline do pesqueiro antes nem medição depois da entrega. O que está comprovado aqui é o processo — descoberta com cliente real, modelagem, backlog e entrega — não um ganho de eficiência quantificado.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ MÉTODO ============ -->
+    <section id="metodo">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="metodo.eyebrow">Método</span>
+        <h2 data-i18n="metodo.title">Como eu trabalho</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="method-grid">
+        <div class="principle rv">
+          <span class="principle-mark">01</span>
+          <h3 data-i18n="princ1.title">Baseline antes da mudança</h3>
+          <p data-i18n="princ1.text">A pergunta que mais evito pular é "qual é o número hoje?". Sem ela, toda melhoria vira anedota — e time de operação está cheio de processo que todo mundo jura ter melhorado sem ninguém saber dizer quanto.</p>
+        </div>
+        <div class="principle rv">
+          <span class="principle-mark">02</span>
+          <h3 data-i18n="princ2.title">Causa raiz no dado, não no sintoma</h3>
+          <p data-i18n="princ2.text">Os cases acima começaram com um sintoma banal — "cliente atrasa", "chega demanda demais" — e só viraram trabalho relevante quando o dado apontou a falha estrutural por trás.</p>
+        </div>
+        <div class="principle rv">
+          <span class="principle-mark">03</span>
+          <h3 data-i18n="princ3.title">Decisão registrada na hora</h3>
+          <p data-i18n="princ3.text">Escopo de KPI, o que fica de fora e por quê, qual ressalva foi aceita — registro no momento da decisão, não reconstruo depois. É o que permite outra pessoa retomar o trabalho sem me entrevistar.</p>
+        </div>
+        <div class="principle rv">
+          <span class="principle-mark">04</span>
+          <h3 data-i18n="princ4.title">O dado tem direito de me contrariar</h3>
+          <p data-i18n="princ4.text">Analisei uma feature que eu mesmo havia construído e o teste pareado por cliente não confirmou o impacto que o número agregado sugeria. A conclusão honesta foi que a evidência não sustentava a alegação — e esse case ficou fora desta página por isso.</p>
+        </div>
+      </div>
+
+      <div class="kit">
+        <div class="kit-group rv">
+          <h3 data-i18n="kit1.title">Dado e BI</h3>
+          <ul>
+            <li>Metabase</li>
+            <li>SQL · Athena, Trino</li>
+            <li>Python · pandas, scipy.stats</li>
+            <li>A/B testing</li>
+            <li>Cohort · percentil</li>
+          </ul>
+        </div>
+        <div class="kit-group rv">
+          <h3 data-i18n="kit2.title">Processo e produto</h3>
+          <ul>
+            <li>BPMN as-is / to-be</li>
+            <li>CSD · Jobs to be Done</li>
+            <li>PRD · BDD</li>
+            <li>Épico → Story → Task</li>
+            <li>RICE · Kano · MoSCoW</li>
+            <li>Scrumban · n8n</li>
+          </ul>
+        </div>
+        <div class="kit-group rv">
+          <h3 data-i18n="kit3.title">Métricas de negócio</h3>
+          <ul>
+            <li>MRR · NMRR · EMRR</li>
+            <li>GRR · NRR · churn</li>
+            <li>Collections</li>
+            <li>LTV · CAC</li>
+            <li>Margem · custo de servir</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMAÇÃO ============ -->
+    <section id="formacao">
+      <div class="sec-head rv">
+        <span class="eyebrow" data-i18n="form.eyebrow">Formação</span>
+        <h2 data-i18n="form.title">Base formal e<br>aprendizado contínuo</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="prose rv" style="margin-bottom: 2.6rem;">
+        <p data-i18n="form.intro">Estudo enquanto opero — cada formação abaixo entrou no trabalho antes de virar certificado. O que listo aqui não é carga horária acumulada, é o que cada uma passou a me permitir fazer.</p>
+      </div>
+
+      <div class="creds">
+        <article class="cred rv">
+          <div class="cred-top">
+            <h3 data-i18n="cred1.title">Engenharia de Software</h3>
+            <span class="cred-org" data-i18n="cred1.org">PUC Minas · graduação</span>
+          </div>
+          <p data-i18n="cred1.text">Modelagem de processos, arquitetura e engenharia de requisitos — a base que sustenta como especifico e documento o que construo.</p>
+          <span class="cred-use" data-i18n="cred1.use">Habilita: BPMN, casos de uso, especificação técnica</span>
+        </article>
+
+        <article class="cred rv">
+          <div class="cred-top">
+            <h3 data-i18n="cred2.title">Product Management</h3>
+            <span class="cred-org" data-i18n="cred2.org">PM3 · 70h</span>
+          </div>
+          <p data-i18n="cred2.text">Discovery e Jobs to be Done, Product Market Fit, métricas de produto, testes A/B, priorização e estratégia.</p>
+          <span class="cred-use" data-i18n="cred2.use">Habilita: matriz CSD, árvore de oportunidades, RICE e Kano</span>
+        </article>
+
+        <article class="cred rv">
+          <div class="cred-top">
+            <h3 data-i18n="cred3.title">Fundamentos de Economia</h3>
+            <span class="cred-org" data-i18n="cred3.org">FGV EESP · 40h</span>
+          </div>
+          <p data-i18n="cred3.text">Microeconomia (custos, formação de preço, estruturas de mercado) e macroeconomia (juros, inflação, política econômica).</p>
+          <span class="cred-use" data-i18n="cred3.use">Habilita: leitura de margem, custo de servir e recorrência</span>
+        </article>
+
+        <article class="cred rv">
+          <div class="cred-top">
+            <h3 data-i18n="cred4.title">Desafio Liga Jovem</h3>
+            <span class="cred-org" data-i18n="cred4.org">SEBRAE · 30h</span>
+          </div>
+          <p data-i18n="cred4.text">Construção de negócio digital do zero: modelo de negócio em BMC, MVP e pitch. Projeto Employ.me — plataforma de empregabilidade jovem em tecnologia.</p>
+          <span class="cred-use" data-i18n="cred4.use">Habilita: modelagem de receita, proposta de valor, prototipação</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section id="contato">
+      <div class="contact-panel rv">
+        <div class="contact-intro">
+          <span class="eyebrow" data-i18n="contato.eyebrow">Contato</span>
+          <h2 data-i18n="contato.title">Vamos conversar sobre operação e dado</h2>
+          <p data-i18n="contato.text">Aberto a trocar sobre eficiência operacional, métricas de SaaS e a fronteira entre produto e finanças — seja uma conversa, uma oportunidade ou uma discordância bem fundamentada.</p>
+
+          <div class="social-row">
+            <a href="mailto:felipepaz.cb@gmail.com" class="social-icon" aria-label="E-mail" title="felipepaz.cb@gmail.com">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m2 7 10 6 10-6"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/felipepazcb/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path>
+              </svg>
+            </a>
+            <a href="https://github.com/felipepcbatista" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="nome" data-i18n="form.nome">Nome</label>
+            <input type="text" id="nome" name="nome" required minlength="2"
+                   placeholder="Como devo te chamar" data-i18n-placeholder="form.nomePlaceholder">
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="form.email">E-mail</label>
+            <input type="email" id="email" name="email" required
+                   placeholder="seu@email.com" data-i18n-placeholder="form.emailPlaceholder">
+          </div>
+
+          <div class="field">
+            <label for="mensagem" data-i18n="form.mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required minlength="10"
+                      placeholder="No que posso ajudar?" data-i18n-placeholder="form.mensagemPlaceholder"></textarea>
+          </div>
+
+          <!-- honeypot: invisível para humanos, preenchido por bots -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Não preencha este campo</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn-solid" id="submitBtn">
+            <span id="submitLabel" data-i18n="form.enviar">Enviar mensagem</span>
+          </button>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="wrap">
+    <span class="mono" style="font-size:0.72rem; color:var(--text-faint);">Felipe Paz Carvalho Batista · 2026</span>
+    <p class="foot-note" data-i18n="footer.note">
+      Todos os números desta página vêm de análise própria sobre dado de produção ou de artefatos
+      versionados dos projetos, com metodologia e ressalvas registradas. Onde a amostra ainda é
+      curta, está dito.
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
