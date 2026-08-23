@@ -156,7 +156,7 @@ window.I18N = {
     'case3.row5': 'Time', 'case3.row5v': '6 pessoas',
     'case3.cav1title': 'O que este case prova — e o que não prova',
     'case3.cav1text': 'Este é um case de <strong>condução de produto</strong>, não de impacto operacional medido. Os 27 indicadores foram especificados para o cliente medir o negócio dele; não houve baseline do pesqueiro antes nem medição depois da entrega. O que está comprovado aqui é o processo — descoberta com cliente real, modelagem, backlog e entrega — não um ganho de eficiência quantificado.',
-    'case.repo': 'Ver repositório',
+    'case3.repoNote': 'Repositórios sob a organização da PUC Minas, com acesso restrito por termo de sigilo firmado com o cliente. Disponíveis mediante solicitação.',
 
     /* --- método --- */
     'metodo.eyebrow': 'Método',
@@ -364,7 +364,7 @@ window.I18N = {
     'case3.row5': 'Team', 'case3.row5v': '6 people',
     'case3.cav1title': 'What this case proves — and what it does not',
     'case3.cav1text': 'This is a case about <strong>product leadership</strong>, not measured operational impact. The 27 indicators were specified for the client to measure their own business; there was no baseline of the venue before delivery and no measurement after. What is proven here is the process — discovery with a real client, modelling, backlog and delivery — not a quantified efficiency gain.',
-    'case.repo': 'View repository',
+    'case3.repoNote': 'Repositories held under the PUC Minas organisation, with restricted access under a confidentiality agreement signed with the client. Available on request.',
 
     /* --- método --- */
     'metodo.eyebrow': 'Method',

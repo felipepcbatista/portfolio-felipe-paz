@@ -209,8 +209,17 @@ td.hi { color: var(--ice); }
   color: var(--violet-hot);
 }
 
-/* ---------- link de repositório ---------- */
+/* ---------- link e nota de repositório ---------- */
 .case-links { margin-top: 0.6rem; }
+
+.repo-note {
+  margin-top: 0.4rem;
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  line-height: 1.55;
+  padding-left: 0.8rem;
+  border-left: 1px solid var(--edge);
+}
 
 .repo-link {
   display: inline-flex;
