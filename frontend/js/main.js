@@ -162,6 +162,40 @@
   onScroll();
 
   /* ========================================================
+     menu mobile
+     ======================================================== */
+  var menuToggle = document.getElementById('menuToggle');
+  var navLinks = document.getElementById('navLinks');
+
+  if (menuToggle && navLinks) {
+    function setMenu(open) {
+      navLinks.classList.toggle('open', open);
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      // trava o scroll do corpo enquanto o painel está aberto
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    menuToggle.addEventListener('click', function () {
+      setMenu(menuToggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    // fecha ao escolher um destino
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+
+    // fecha com Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setMenu(false);
+    });
+
+    // se a janela crescer além do breakpoint, garante estado limpo
+    window.matchMedia('(min-width: 52.0625rem)').addEventListener('change', function (ev) {
+      if (ev.matches) setMenu(false);
+    });
+  }
+
+  /* ========================================================
      reveal em scroll
      ======================================================== */
   var revealables = document.querySelectorAll('.rv');
@@ -247,9 +281,16 @@
         website: form.website.value // honeypot
       };
 
-      // validação no cliente (o servidor valida de novo)
-      if (payload.nome.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email) || payload.mensagem.length < 10) {
-        setStatus(t('form.erro'), 'err');
+      // validação no cliente (o servidor valida de novo).
+      // Cada erro tem mensagem própria — dizer só "não foi possível enviar"
+      // deixa o visitante sem saber o que corrigir.
+      var erros = [];
+      if (payload.nome.length < 2) erros.push(t('form.erroNome'));
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) erros.push(t('form.erroEmail'));
+      if (payload.mensagem.length < 10) erros.push(t('form.erroMensagem'));
+
+      if (erros.length) {
+        setStatus(erros.join(' '), 'err');
         return;
       }
 
@@ -276,7 +317,9 @@
           }
         })
         .catch(function () {
-          setStatus(t('form.erro'), 'err');
+          // fetch só rejeita quando a requisição nem sai (servidor fora do ar,
+          // página aberta como file://, rede indisponível)
+          setStatus(t('form.erroRede'), 'err');
         })
         .then(function () {
           submitBtn.disabled = false;

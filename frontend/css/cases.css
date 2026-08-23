@@ -1,6 +1,6 @@
 /* ============================================================
    CASES — painéis de case, KPIs, tabelas, ressalvas,
-   princípios de método e toolkit.
+   princípios de método e credenciais.
    ============================================================ */
 
 .cases { display: flex; flex-direction: column; gap: 2.2rem; }
@@ -40,12 +40,15 @@
 
 @media (max-width: 62rem) { .case-body { grid-template-columns: 1fr; } }
 
+/* min-width: 0 em filho de grid: sem isso o conteúdo define
+   a largura mínima e a coluna estoura o contêiner */
 .case-story {
   padding: clamp(1.6rem, 3vw, 2.4rem);
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
   border-right: 1px solid var(--edge-soft);
+  min-width: 0;
 }
 
 @media (max-width: 62rem) {
@@ -61,6 +64,7 @@
   flex-direction: column;
   gap: 1.4rem;
   background: rgba(7, 7, 15, 0.35);
+  min-width: 0;
 }
 
 /* ---------- KPI ---------- */
@@ -85,9 +89,11 @@
 /* ---------- passos de método ---------- */
 .steps { display: flex; flex-direction: column; gap: 0.1rem; margin-top: 0.5rem; }
 
+/* minmax(0,1fr) impede que o texto force a coluna a crescer
+   além do contêiner — sem isso o grid estoura em telas estreitas */
 .step {
   display: grid;
-  grid-template-columns: 2rem 1fr;
+  grid-template-columns: 2rem minmax(0, 1fr);
   gap: 0.8rem;
   padding: 0.55rem 0;
   font-size: var(--f--1);
@@ -176,7 +182,7 @@ td.hi { color: var(--ice); }
 /* ---------- princípios de método ---------- */
 .method-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
   gap: 1.1rem;
 }
 
@@ -236,9 +242,12 @@ td.hi { color: var(--ice); }
 }
 
 /* ---------- formação e certificações ---------- */
+/* 2 colunas em telas largas: os textos são densos e ficariam
+   altos demais em 4 colunas estreitas.
+   min(24rem, 100%) evita estouro em telas < 384px. */
 .creds {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
   gap: 1.1rem;
 }
 
@@ -280,57 +289,6 @@ td.hi { color: var(--ice); }
 .cred p {
   font-size: var(--f--1);
   color: var(--text-dim);
-  line-height: 1.6;
-  flex-grow: 1;
+  line-height: 1.65;
 }
 
-.cred-use {
-  font-size: 0.72rem;
-  color: var(--ice);
-  line-height: 1.5;
-  padding-top: 0.7rem;
-  border-top: 1px solid var(--edge-soft);
-}
-
-/* ---------- toolkit ---------- */
-.kit {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 2rem 2.6rem;
-  margin-top: 2.6rem;
-}
-
-.kit-group { display: flex; flex-direction: column; gap: 0.75rem; }
-
-.kit-group h3 {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: var(--ice);
-  font-weight: 500;
-}
-
-.kit-group ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.42rem;
-}
-
-.kit-group li {
-  font-size: var(--f--1);
-  color: var(--text-dim);
-  padding-left: 1rem;
-  position: relative;
-}
-
-.kit-group li::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0.68em;
-  width: 5px; height: 1px;
-  background: var(--violet);
-}

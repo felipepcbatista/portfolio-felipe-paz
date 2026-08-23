@@ -90,7 +90,84 @@ nav.stuck {
 .nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { width: 100%; }
 
-@media (max-width: 46rem) { .nav-links { display: none; } }
+/* ---------- botão de menu (só mobile) ---------- */
+.menu-toggle {
+  display: none;
+  width: 38px;
+  height: 34px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 8px;
+  background: rgba(21, 18, 48, 0.6);
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.menu-toggle:hover { border-color: var(--violet); }
+
+.menu-bar {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--text-dim);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(.2,.8,.3,1), opacity 0.2s;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .menu-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ---------- navegação em telas pequenas ---------- */
+@media (max-width: 52rem) {
+  .menu-toggle { display: flex; }
+
+  /* painel deslizante a partir da nav */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(78vw, 20rem);
+    height: 100svh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    padding: 5rem 2rem 2rem;
+    background: rgba(12, 10, 26, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-left: 1px solid var(--edge);
+    transform: translateX(100%);
+    transition: transform 0.38s cubic-bezier(.2,.8,.3,1);
+    z-index: 45;
+  }
+
+  .nav-links.open { transform: translateX(0); }
+
+  .nav-links a {
+    font-size: 1.05rem;
+    color: var(--text);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--edge-soft);
+  }
+
+  .nav-links a::after { display: none; }
+
+  /* o botão fica acima do painel para poder fechar */
+  .menu-toggle, .lang-toggle { position: relative; z-index: 46; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-links { transition: none; }
+  .menu-bar { transition: none; }
+}
 
 /* ---------- hero ---------- */
 .hero {
@@ -108,10 +185,10 @@ nav.stuck {
 }
 
 @media (max-width: 58rem) {
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
-.hero-copy { display: flex; flex-direction: column; gap: 1.7rem; }
+.hero-copy { display: flex; flex-direction: column; gap: 1.7rem; min-width: 0; }
 
 .hero h1 {
   font-size: var(--f-4);
@@ -149,6 +226,7 @@ nav.stuck {
   position: relative;
   aspect-ratio: 1;
   width: min(100%, 20rem);
+  max-width: 100%;
   justify-self: center;
   border-radius: 50%;
   display: grid;
@@ -158,17 +236,29 @@ nav.stuck {
     var(--nebula);
   border: 1px solid var(--edge);
   box-shadow: 0 0 0 1px rgba(123,92,255,0.16), 0 0 70px rgba(123,92,255,0.24) inset;
+  padding: 14px;
+  /* recorta o anel em rotação; sendo circular, não altera a aparência */
   overflow: hidden;
 }
 
-.portrait-slot img { width: 100%; height: 100%; object-fit: cover; }
+.portrait-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
+/* O anel fica dentro do slot e o padding do slot cria o respiro
+   até a foto. A rotação faz a caixa do elemento crescer na diagonal
+   (lado × √2), então contain: layout isola esse efeito do fluxo. */
 .portrait-ring {
   position: absolute;
-  inset: -14px;
+  inset: 0;
   border-radius: 50%;
   border: 1px dashed rgba(123, 92, 255, 0.32);
   animation: spin 34s linear infinite;
+  contain: layout size;
+  pointer-events: none;
 }
 
 .portrait-empty {
@@ -200,7 +290,7 @@ nav.stuck {
 
 .orbit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(12.5rem, 100%), 1fr));
 }
 
 .orb {
@@ -247,7 +337,7 @@ nav.stuck {
 
 .leg {
   display: grid;
-  grid-template-columns: 10rem 1fr;
+  grid-template-columns: 10rem minmax(0, 1fr);
   gap: 0 2rem;
   padding: 1.7rem 0;
   border-top: 1px solid var(--edge-soft);
@@ -407,6 +497,20 @@ nav.stuck {
 
 .form-status.ok { color: var(--ice); }
 .form-status.err { color: var(--amber); }
+
+/* ---------- contato em telas pequenas ---------- */
+@media (max-width: 46rem) {
+  /* 16px no input evita o zoom automático do iOS ao focar */
+  .field input,
+  .field textarea { font-size: 16px; }
+
+  .contact-form .btn { align-self: stretch; justify-content: center; }
+
+  .social-icon { width: 2.9rem; height: 2.9rem; }
+
+  footer { padding-block: 2rem 3rem; }
+  .foot-note { max-width: 100%; }
+}
 
 /* ---------- footer ---------- */
 footer {

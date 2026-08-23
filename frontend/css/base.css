@@ -202,3 +202,50 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   RESPONSIVIDADE — ajustes globais para telas pequenas
+   ============================================================ */
+
+/* nunca deixa mídia ou tabela estourar o contêiner */
+img, svg, video, canvas, table { max-width: 100%; }
+
+/* quebra palavras longas (URLs, termos técnicos) em vez de estourar */
+p, li, h1, h2, h3, .kpi-detail, .caveat span, .cred p {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 46rem) {
+  /* margem lateral menor aproveita a tela estreita */
+  .wrap { width: min(100% - 1.6rem, 76rem); }
+
+  /* seções mais compactas verticalmente */
+  section { padding-block: clamp(3rem, 8vh, 4.5rem); }
+  .sec-head { margin-bottom: 2rem; }
+
+  /* hero: menos respiro no topo, foto menor.
+     width em vw garante o limite mesmo com aspect-ratio no slot */
+  .hero { padding-block: 5.5rem 2.5rem; min-height: auto; }
+  .portrait-slot { width: min(70vw, 15rem); }
+
+  /* alvo de toque mínimo de 44px nos botões principais */
+  .btn { padding: 0.8rem 1.5rem; }
+  .cta-row .btn { flex: 1 1 auto; justify-content: center; }
+}
+
+/* telas muito estreitas (≤ 380px): evita a nav espremer a marca */
+@media (max-width: 23.75rem) {
+  .brand { font-size: 0.85rem; }
+  .nav-right { gap: 0.7rem; }
+  .lang-toggle { padding: 0.28rem 0.55rem; font-size: 0.65rem; }
+}
+
+/* chips longos ("Melhor Trabalho Interdisciplinar · PUC Minas") não cabem
+   em uma linha no mobile — deixa quebrar em vez de estourar o contêiner */
+@media (max-width: 52rem) {
+  .chip {
+    white-space: normal;
+    max-width: 100%;
+    line-height: 1.35;
+  }
+}

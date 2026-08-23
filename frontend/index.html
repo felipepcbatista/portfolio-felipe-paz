@@ -37,7 +37,7 @@
     <div class="wrap nav-in">
       <div class="brand"><span class="brand-dot"></span> Felipe Paz</div>
       <div class="nav-right">
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
           <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
           <a href="#trajetoria" data-i18n="nav.trajetoria">Trajetória</a>
           <a href="#cases" data-i18n="nav.cases">Cases</a>
@@ -47,6 +47,13 @@
         </div>
         <button type="button" class="lang-toggle" id="langToggle" data-i18n-aria="lang.toggleAria" aria-label="Switch to English">
           <span data-i18n="lang.toggle">EN</span>
+        </button>
+        <button type="button" class="menu-toggle" id="menuToggle"
+                aria-expanded="false" aria-controls="navLinks"
+                data-i18n-aria="nav.menuAria" aria-label="Abrir menu de navegação">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
         </button>
       </div>
     </div>
@@ -465,39 +472,6 @@
         </div>
       </div>
 
-      <div class="kit">
-        <div class="kit-group rv">
-          <h3 data-i18n="kit1.title">Dado e BI</h3>
-          <ul>
-            <li>Metabase</li>
-            <li>SQL · Athena, Trino</li>
-            <li>Python · pandas, scipy.stats</li>
-            <li>A/B testing</li>
-            <li>Cohort · percentil</li>
-          </ul>
-        </div>
-        <div class="kit-group rv">
-          <h3 data-i18n="kit2.title">Processo e produto</h3>
-          <ul>
-            <li>BPMN as-is / to-be</li>
-            <li>CSD · Jobs to be Done</li>
-            <li>PRD · BDD</li>
-            <li>Épico → Story → Task</li>
-            <li>RICE · Kano · MoSCoW</li>
-            <li>Scrumban · n8n</li>
-          </ul>
-        </div>
-        <div class="kit-group rv">
-          <h3 data-i18n="kit3.title">Métricas de negócio</h3>
-          <ul>
-            <li>MRR · NMRR · EMRR</li>
-            <li>GRR · NRR · churn</li>
-            <li>Collections</li>
-            <li>LTV · CAC</li>
-            <li>Margem · custo de servir</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
     <!-- ============ FORMAÇÃO ============ -->
@@ -519,7 +493,6 @@
             <span class="cred-org" data-i18n="cred1.org">PUC Minas · graduação</span>
           </div>
           <p data-i18n="cred1.text">Modelagem de processos, arquitetura e engenharia de requisitos — a base que sustenta como especifico e documento o que construo.</p>
-          <span class="cred-use" data-i18n="cred1.use">Habilita: BPMN, casos de uso, especificação técnica</span>
         </article>
 
         <article class="cred rv">
@@ -528,7 +501,6 @@
             <span class="cred-org" data-i18n="cred2.org">PM3 · 70h</span>
           </div>
           <p data-i18n="cred2.text">Discovery e Jobs to be Done, Product Market Fit, métricas de produto, testes A/B, priorização e estratégia.</p>
-          <span class="cred-use" data-i18n="cred2.use">Habilita: matriz CSD, árvore de oportunidades, RICE e Kano</span>
         </article>
 
         <article class="cred rv">
@@ -537,7 +509,6 @@
             <span class="cred-org" data-i18n="cred3.org">FGV EESP · 40h</span>
           </div>
           <p data-i18n="cred3.text">Microeconomia (custos, formação de preço, estruturas de mercado) e macroeconomia (juros, inflação, política econômica).</p>
-          <span class="cred-use" data-i18n="cred3.use">Habilita: leitura de margem, custo de servir e recorrência</span>
         </article>
 
         <article class="cred rv">
@@ -546,7 +517,6 @@
             <span class="cred-org" data-i18n="cred4.org">SEBRAE · 30h</span>
           </div>
           <p data-i18n="cred4.text">Construção de negócio digital do zero: modelo de negócio em BMC, MVP e pitch. Projeto Employ.me — plataforma de empregabilidade jovem em tecnologia.</p>
-          <span class="cred-use" data-i18n="cred4.use">Habilita: modelagem de receita, proposta de valor, prototipação</span>
         </article>
       </div>
     </section>

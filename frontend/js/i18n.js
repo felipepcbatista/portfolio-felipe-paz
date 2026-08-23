@@ -8,6 +8,7 @@ window.I18N = {
   pt: {
     /* --- nav --- */
     'nav.sobre': 'Sobre',
+    'nav.menuAria': 'Abrir menu de navegação',
     'nav.trajetoria': 'Trajetória',
     'nav.cases': 'Cases',
     'nav.metodo': 'Método',
@@ -168,9 +169,6 @@ window.I18N = {
     'princ3.text': 'Escopo de KPI, o que fica de fora e por quê, qual ressalva foi aceita — registro no momento da decisão, não reconstruo depois. É o que permite outra pessoa retomar o trabalho sem me entrevistar.',
     'princ4.title': 'O dado tem direito de me contrariar',
     'princ4.text': 'Analisei uma feature que eu mesmo havia construído e o teste pareado por cliente não confirmou o impacto que o número agregado sugeria. A conclusão honesta foi que a evidência não sustentava a alegação — e esse case ficou fora desta página por isso.',
-    'kit1.title': 'Dado e BI',
-    'kit2.title': 'Processo e produto',
-    'kit3.title': 'Métricas de negócio',
 
     /* --- formação --- */
     'form.eyebrow': 'Formação',
@@ -178,20 +176,16 @@ window.I18N = {
     'form.intro': 'Estudo enquanto opero — cada formação abaixo entrou no trabalho antes de virar certificado. O que listo aqui não é carga horária acumulada, é o que cada uma passou a me permitir fazer.',
     'cred1.title': 'Engenharia de Software',
     'cred1.org': 'PUC Minas · graduação',
-    'cred1.text': 'Modelagem de processos, arquitetura e engenharia de requisitos — a base que sustenta como especifico e documento o que construo.',
-    'cred1.use': 'Habilita: BPMN, casos de uso, especificação técnica',
+    'cred1.text': 'Graduação com foco em engenharia de requisitos, modelagem de processos de negócio, arquitetura de software e metodologias ágeis. É a base que sustenta a forma como especifico o que construo: entender o processo antes de propor a solução, documentar a regra antes de implementá-la e desenhar o fluxo antes de escrever o código. Também é onde exercito a prática em projetos com clientes reais, do levantamento à entrega em produção.',
     'cred2.title': 'Product Management',
     'cred2.org': 'PM3 · 70h',
-    'cred2.text': 'Discovery e Jobs to be Done, Product Market Fit, métricas de produto, testes A/B, priorização e estratégia.',
-    'cred2.use': 'Habilita: matriz CSD, árvore de oportunidades, RICE e Kano',
+    'cred2.text': 'Formação completa em gestão de produtos, cobrindo o ciclo do problema à medição. Discovery com Jobs to be Done, matriz CSD e árvore de oportunidades; validação de Product Market Fit e modelagem de negócio; métricas de produto, frameworks de indicadores e desenho de testes A/B — da hipótese à leitura do resultado; priorização com RICE, Kano e MoSCoW; estratégia, roadmap orientado a resultado e gestão de stakeholders com técnicas de negociação e buy-in.',
     'cred3.title': 'Fundamentos de Economia',
     'cred3.org': 'FGV EESP · 40h',
-    'cred3.text': 'Microeconomia (custos, formação de preço, estruturas de mercado) e macroeconomia (juros, inflação, política econômica).',
-    'cred3.use': 'Habilita: leitura de margem, custo de servir e recorrência',
+    'cred3.text': 'Fundamentos econômicos aplicados à decisão de negócio. Em microeconomia: estrutura de custos, formação de preço, elasticidade de demanda e como diferentes estruturas de mercado mudam a margem possível. Em macroeconomia: juros, inflação, câmbio e política econômica — o cenário que determina custo de capital e comportamento de pagamento. É a lente que uso para ler margem por ciclo, custo de servir e recorrência de receita como decisões econômicas, não apenas como números de um dashboard.',
     'cred4.title': 'Desafio Liga Jovem',
     'cred4.org': 'SEBRAE · 30h',
-    'cred4.text': 'Construção de negócio digital do zero: modelo de negócio em BMC, MVP e pitch. Projeto Employ.me — plataforma de empregabilidade jovem em tecnologia.',
-    'cred4.use': 'Habilita: modelagem de receita, proposta de valor, prototipação',
+    'cred4.text': 'Programa de empreendedorismo focado em tirar um negócio digital do papel. Modelagem em Business Model Canvas, definição de proposta de valor e desenho de modelo de receita; construção de MVP e defesa em pitch. Aplicado no Employ.me, plataforma de empregabilidade jovem em tecnologia: discovery com personas e mapa de empatia, protótipo interativo e um modelo híbrido de receita — freemium B2C somado a plano institucional B2B.',
 
     /* --- contato --- */
     'contato.eyebrow': 'Contato',
@@ -204,6 +198,10 @@ window.I18N = {
     'form.enviando': 'Enviando…',
     'form.sucesso': 'Mensagem enviada. Respondo em breve.',
     'form.erro': 'Não foi possível enviar. Tente novamente ou use o e-mail direto.',
+    'form.erroNome': 'Informe seu nome (ao menos 2 caracteres).',
+    'form.erroEmail': 'Informe um e-mail válido.',
+    'form.erroMensagem': 'A mensagem precisa ter ao menos 10 caracteres.',
+    'form.erroRede': 'Servidor indisponível. Verifique a conexão ou use o e-mail direto.',
     'form.nomePlaceholder': 'Como devo te chamar',
     'form.emailPlaceholder': 'seu@email.com',
     'form.mensagemPlaceholder': 'No que posso ajudar?',
@@ -212,12 +210,13 @@ window.I18N = {
     'footer.note': 'Todos os números desta página vêm de análise própria sobre dado de produção ou de artefatos versionados dos projetos, com metodologia e ressalvas registradas. Onde a amostra ainda é curta, está dito.',
 
     'lang.toggle': 'EN',
-    'lang.toggleAria': 'Switch to English'
+    'lang.toggleAria': 'Switch to English',
   },
 
   en: {
     /* --- nav --- */
     'nav.sobre': 'About',
+    'nav.menuAria': 'Open navigation menu',
     'nav.trajetoria': 'Career',
     'nav.cases': 'Case studies',
     'nav.metodo': 'Method',
@@ -378,9 +377,6 @@ window.I18N = {
     'princ3.text': 'KPI scope, what is left out and why, which caveat was accepted — I record it at the moment of the decision rather than reconstructing it later. That is what lets someone else pick up the work without interviewing me.',
     'princ4.title': 'The data is allowed to contradict me',
     'princ4.text': 'I analysed a feature I had built myself and the paired per-customer test did not confirm the impact the aggregate number suggested. The honest conclusion was that the evidence did not support the claim — and that case is not on this page because of it.',
-    'kit1.title': 'Data & BI',
-    'kit2.title': 'Process & product',
-    'kit3.title': 'Business metrics',
 
     /* --- formação --- */
     'form.eyebrow': 'Education',
@@ -388,20 +384,16 @@ window.I18N = {
     'form.intro': 'I study while I operate — each programme below entered my work before it became a certificate. What I list here is not accumulated hours, it is what each one enabled me to do.',
     'cred1.title': 'Software Engineering',
     'cred1.org': 'PUC Minas · undergraduate',
-    'cred1.text': 'Process modelling, architecture and requirements engineering — the grounding behind how I specify and document what I build.',
-    'cred1.use': 'Enables: BPMN, use cases, technical specification',
+    'cred1.text': 'Undergraduate programme centred on requirements engineering, business process modelling, software architecture and agile methods. It is the grounding behind how I specify what I build: understand the process before proposing a solution, document the rule before implementing it, and map the flow before writing code. It is also where I practise on projects with real clients, from elicitation through to production delivery.',
     'cred2.title': 'Product Management',
     'cred2.org': 'PM3 · 70h',
-    'cred2.text': 'Discovery and Jobs to be Done, Product Market Fit, product metrics, A/B testing, prioritisation and strategy.',
-    'cred2.use': 'Enables: CSD matrix, opportunity trees, RICE and Kano',
+    'cred2.text': 'Full product management programme covering the cycle from problem to measurement. Discovery with Jobs to be Done, CSD matrix and opportunity trees; Product Market Fit validation and business modelling; product metrics, indicator frameworks and A/B test design — from hypothesis to reading the result; prioritisation with RICE, Kano and MoSCoW; strategy, outcome-driven roadmaps and stakeholder management with negotiation and buy-in techniques.',
     'cred3.title': 'Foundations of Economics',
     'cred3.org': 'FGV EESP · 40h',
-    'cred3.text': 'Microeconomics (costs, pricing, market structures) and macroeconomics (interest rates, inflation, economic policy).',
-    'cred3.use': 'Enables: reading margin, cost to serve and recurrence',
+    'cred3.text': 'Economic fundamentals applied to business decisions. In microeconomics: cost structure, pricing, demand elasticity and how different market structures change the margin available. In macroeconomics: interest rates, inflation, exchange rates and economic policy — the backdrop that sets cost of capital and payment behaviour. It is the lens I use to read margin per cycle, cost to serve and revenue recurrence as economic decisions rather than dashboard figures.',
     'cred4.title': 'Liga Jovem Challenge',
     'cred4.org': 'SEBRAE · 30h',
-    'cred4.text': 'Building a digital business from scratch: business model canvas, MVP and pitch. Project Employ.me — a youth employability platform for the tech sector.',
-    'cred4.use': 'Enables: revenue modelling, value proposition, prototyping',
+    'cred4.text': 'Entrepreneurship programme focused on getting a digital business off the ground. Business Model Canvas modelling, value proposition definition and revenue model design; MVP construction and pitch defence. Applied to Employ.me, a youth employability platform for the tech sector: discovery with personas and empathy mapping, an interactive prototype, and a hybrid revenue model — freemium B2C alongside an institutional B2B plan.',
 
     /* --- contato --- */
     'contato.eyebrow': 'Contact',
@@ -414,6 +406,10 @@ window.I18N = {
     'form.enviando': 'Sending…',
     'form.sucesso': 'Message sent. I will reply shortly.',
     'form.erro': 'Could not send. Please try again or use the email directly.',
+    'form.erroNome': 'Enter your name (at least 2 characters).',
+    'form.erroEmail': 'Enter a valid email address.',
+    'form.erroMensagem': 'The message needs at least 10 characters.',
+    'form.erroRede': 'Server unavailable. Check your connection or use the email directly.',
     'form.nomePlaceholder': 'What should I call you',
     'form.emailPlaceholder': 'you@email.com',
     'form.mensagemPlaceholder': 'How can I help?',
@@ -422,6 +418,6 @@ window.I18N = {
     'footer.note': 'Every number on this page comes from my own analysis of production data or from versioned project artefacts, with methodology and caveats on record. Where the sample is still short, it says so.',
 
     'lang.toggle': 'PT',
-    'lang.toggleAria': 'Mudar para português'
+    'lang.toggleAria': 'Mudar para português',
   }
 };

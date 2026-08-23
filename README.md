@@ -175,7 +175,45 @@ rate limit e tratamento de erro sob controle da aplicação.
 
 **Bilíngue em todo o site, não apenas no "Sobre mim".** O idioma é detectado a partir do
 navegador e pode ser alternado a qualquer momento, com a preferência persistida no
-`localStorage`.
+`localStorage`. São 188 chaves de tradução cobrindo inclusive a narrativa completa dos cases.
+
+---
+
+## Responsividade
+
+Layout fluido validado em navegador real (Chrome headless), medindo `scrollWidth` contra a
+viewport em 8 larguras — sem rolagem horizontal em nenhuma delas.
+
+| Largura | Comportamento |
+|---|---|
+| 320–413px | Coluna única, menu deslizante, métricas empilhadas |
+| 414–767px | Coluna única com mais respiro lateral |
+| 768–831px | Formação em 2 colunas, menu ainda deslizante |
+| 832–991px | Navegação completa, cases ainda empilhados |
+| 992px+ | Layout completo em duas colunas |
+
+**Breakpoints e o que muda em cada um**
+
+| Breakpoint | Efeito |
+|---|---|
+| `62rem` (992px) | Colunas do case (narrativa \| KPIs) empilham |
+| `58rem` (928px) | Hero passa a coluna única |
+| `56rem` (896px) | Painel de contato empilha texto e formulário |
+| `52rem` (832px) | Navegação vira menu deslizante; chips passam a quebrar linha |
+| `46rem` (736px) | Faixa de métricas em coluna única; margens e espaçamentos reduzidos |
+| `23.75rem` (380px) | Marca e alternador de idioma compactam na barra |
+
+**Técnicas aplicadas**
+
+- Tipografia e espaçamentos fluidos com `clamp()`, sem saltos entre breakpoints
+- `minmax(0, 1fr)` e `min-width: 0` em filhos de grid — sem isso o conteúdo define a largura
+  mínima e a coluna estoura o contêiner
+- `minmax(min(24rem, 100%), 1fr)` nos grids automáticos, evitando pedir mais largura do que
+  a tela oferece
+- Tabelas em contêiner com `overflow-x: auto`, preservando a leitura em telas estreitas
+- Inputs com `font-size: 16px` no mobile, evitando o zoom automático do iOS ao focar
+- Alvos de toque de no mínimo 44px nos controles principais
+- `prefers-reduced-motion` respeitado em todas as animações, incluindo o menu
 
 ---
 
@@ -189,7 +227,32 @@ navegador e pode ser alternado a qualquer momento, com a preferência persistida
 
 ### Wireframes
 
-_(imagens dos protótipos do Figma — a inserir)_
+Protótipos de média fidelidade construídos no Figma antes da implementação.
+Arquivo completo: [Figma — Wireframes Lab01S01](https://www.figma.com/design/4CilL4rHu38ffSLdQlTYVL)
+
+#### Desktop — 1440px
+
+**Hero, faixa de métricas, Sobre mim e início da Trajetória**
+
+![Wireframe desktop — hero e sobre](docs/wireframes/01-desktop-hero-sobre.png)
+
+**Cases — anatomia do painel (narrativa + KPIs + ressalvas)**
+
+![Wireframe desktop — cases](docs/wireframes/02-desktop-cases.png)
+
+**Método, Formação e Contato com formulário**
+
+![Wireframe desktop — método, formação e contato](docs/wireframes/03-desktop-metodo-formacao-contato.png)
+
+#### Mobile — 375px
+
+| Hero e métricas | Case empilhado | Formação e contato |
+|---|---|---|
+| ![Mobile hero](docs/wireframes/04-mobile-hero-metricas.png) | ![Mobile case](docs/wireframes/05-mobile-case.png) | ![Mobile contato](docs/wireframes/06-mobile-formacao-contato.png) |
+
+Os wireframes mobile documentam os breakpoints reais da implementação: em 62rem as colunas
+do case empilham, em 52rem a navegação vira menu deslizante, e em 46rem a faixa de métricas
+passa a uma coluna.
 
 ---
 
