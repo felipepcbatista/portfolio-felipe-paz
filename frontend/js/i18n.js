@@ -24,6 +24,8 @@ window.I18N = {
     'hero.lede': 'Trabalho na fronteira entre operação, produto e dado — mapeio o processo, encontro a causa raiz no dado, especifico a solução e volto para medir se funcionou. Inclusive quando o dado diz que não.',
     'hero.cta1': 'Ver os cases',
     'hero.cta2': 'Falar comigo',
+    'hero.cta3': 'Currículo',
+    'hero.cvAria': 'Abrir currículo em PDF (abre em nova aba)',
     'hero.photoAlt': 'Felipe Paz Carvalho Batista',
 
     /* --- faixa de métricas --- */
@@ -178,9 +180,9 @@ window.I18N = {
     'cred1.title': 'Engenharia de Software',
     'cred1.org': 'PUC Minas · graduação',
     'cred1.text': 'Graduação com foco em engenharia de requisitos, modelagem de processos de negócio, arquitetura de software e metodologias ágeis. É a base que sustenta a forma como especifico o que construo: entender o processo antes de propor a solução, documentar a regra antes de implementá-la e desenhar o fluxo antes de escrever o código. Também é onde exercito a prática em projetos com clientes reais, do levantamento à entrega em produção.',
-    'cred2.title': 'Product Management',
+    'cred2.title': 'Produtos Digitais e Negócios',
     'cred2.org': 'PM3 · 70h',
-    'cred2.text': 'Formação completa em gestão de produtos, cobrindo o ciclo do problema à medição. Discovery com Jobs to be Done, matriz CSD e árvore de oportunidades; validação de Product Market Fit e modelagem de negócio; métricas de produto, frameworks de indicadores e desenho de testes A/B — da hipótese à leitura do resultado; priorização com RICE, Kano e MoSCoW; estratégia, roadmap orientado a resultado e gestão de stakeholders com técnicas de negociação e buy-in.',
+    'cred2.text': 'Formação que cobre os dois lados de um produto digital: como se constrói e como se sustenta como negócio. Do lado do negócio — pesquisa de mercado, Business Model Canvas, proposta de valor, Product Market Fit e mitigação de risco. Do lado do produto — discovery com Jobs to be Done, matriz CSD e árvore de oportunidades; métricas, frameworks de indicadores e desenho de testes A/B da hipótese à leitura do resultado; priorização com RICE, Kano e MoSCoW; estratégia, roadmap orientado a resultado e gestão de stakeholders com técnicas de negociação e buy-in.',
     'cred3.title': 'Fundamentos de Economia',
     'cred3.org': 'FGV EESP · 40h',
     'cred3.text': 'Fundamentos econômicos aplicados à decisão de negócio. Em microeconomia: estrutura de custos, formação de preço, elasticidade de demanda e como diferentes estruturas de mercado mudam a margem possível. Em macroeconomia: juros, inflação, câmbio e política econômica — o cenário que determina custo de capital e comportamento de pagamento. É a lente que uso para ler margem por ciclo, custo de servir e recorrência de receita como decisões econômicas, não apenas como números de um dashboard.',
@@ -233,6 +235,8 @@ window.I18N = {
     'hero.lede': 'I work where operations, product and data meet — I map the process, find the root cause in the data, specify the solution, and come back to measure whether it worked. Including when the data says it did not.',
     'hero.cta1': 'See case studies',
     'hero.cta2': 'Get in touch',
+    'hero.cta3': 'Résumé',
+    'hero.cvAria': 'Open résumé as PDF (opens in a new tab)',
     'hero.photoAlt': 'Felipe Paz Carvalho Batista',
 
     /* --- faixa de métricas --- */
@@ -387,9 +391,9 @@ window.I18N = {
     'cred1.title': 'Software Engineering',
     'cred1.org': 'PUC Minas · undergraduate',
     'cred1.text': 'Undergraduate programme centred on requirements engineering, business process modelling, software architecture and agile methods. It is the grounding behind how I specify what I build: understand the process before proposing a solution, document the rule before implementing it, and map the flow before writing code. It is also where I practise on projects with real clients, from elicitation through to production delivery.',
-    'cred2.title': 'Product Management',
+    'cred2.title': 'Digital Products and Business',
     'cred2.org': 'PM3 · 70h',
-    'cred2.text': 'Full product management programme covering the cycle from problem to measurement. Discovery with Jobs to be Done, CSD matrix and opportunity trees; Product Market Fit validation and business modelling; product metrics, indicator frameworks and A/B test design — from hypothesis to reading the result; prioritisation with RICE, Kano and MoSCoW; strategy, outcome-driven roadmaps and stakeholder management with negotiation and buy-in techniques.',
+    'cred2.text': 'A programme covering both sides of a digital product: how it is built and how it holds up as a business. On the business side — market research, Business Model Canvas, value proposition, Product Market Fit and risk mitigation. On the product side — discovery with Jobs to be Done, CSD matrix and opportunity trees; metrics, indicator frameworks and A/B test design from hypothesis to reading the result; prioritisation with RICE, Kano and MoSCoW; strategy, outcome-driven roadmaps and stakeholder management with negotiation and buy-in techniques.',
     'cred3.title': 'Foundations of Economics',
     'cred3.org': 'FGV EESP · 40h',
     'cred3.text': 'Economic fundamentals applied to business decisions. In microeconomics: cost structure, pricing, demand elasticity and how different market structures change the margin available. In macroeconomics: interest rates, inflation, exchange rates and economic policy — the backdrop that sets cost of capital and payment behaviour. It is the lens I use to read margin per cycle, cost to serve and revenue recurrence as economic decisions rather than dashboard figures.',

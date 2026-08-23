@@ -181,6 +181,28 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
 
 .btn-ghost:hover { border-color: var(--violet); color: var(--violet-hot); transform: translateY(-2px); }
 
+/* botão do currículo: terciário — presente sem competir com os dois CTAs */
+.btn-cv {
+  color: var(--text-dim);
+  border-color: var(--edge-soft);
+  background: transparent;
+  padding-inline: 1.1rem;
+}
+
+.btn-cv svg { flex-shrink: 0; transition: transform 0.25s cubic-bezier(.2,.8,.3,1); }
+
+.btn-cv:hover {
+  color: var(--ice);
+  border-color: rgba(94, 234, 212, 0.4);
+}
+
+.btn-cv:hover svg { transform: translateY(2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-cv svg { transition: none; }
+  .btn-cv:hover svg { transform: none; }
+}
+
 /* --- animação de entrada --- */
 .rv {
   opacity: 0;
