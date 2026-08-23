@@ -52,6 +52,7 @@ window.I18N = {
 
     'leg1.when': 'ago — set · 2025',
     'leg1.title': 'Gerente de Projeto · Employ.me',
+    'leg1.repo': 'Ver repositório',
     'leg1.text': 'Concepção de uma plataforma de empregabilidade jovem em tecnologia no Desafio Liga Jovem do SEBRAE. Discovery estruturado (matriz CSD, personas, mapa de empatia, proposta de valor), documentação em One Pager e PRDs, backlog priorizado por MoSCoW e protótipo interativo — com modelo de negócio híbrido, freemium B2C e institucional B2B. MVP conceitual, não chegou a produção.',
 
     'leg2.when': '2025 — 2026',
@@ -260,6 +261,7 @@ window.I18N = {
 
     'leg1.when': 'Aug — Sep · 2025',
     'leg1.title': 'Project Manager · Employ.me',
+    'leg1.repo': 'View repository',
     'leg1.text': 'Conception of a youth employability platform for the tech sector, built for SEBRAE\'s Liga Jovem Challenge. Structured discovery (CSD matrix, personas, empathy map, value proposition), documentation in One Pager and PRDs, backlog prioritised with MoSCoW and an interactive prototype — with a hybrid business model: freemium B2C and institutional B2B. Conceptual MVP, never reached production.',
 
     'leg2.when': '2025 — 2026',

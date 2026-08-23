@@ -379,6 +379,9 @@ nav.stuck {
   max-width: 62ch;
 }
 
+/* link de repositório dentro da linha do tempo */
+.leg .case-links { margin-top: 0.8rem; }
+
 @media (max-width: 52rem) {
   .leg { grid-template-columns: 1fr; gap: 0.5rem; }
   .leg-when { padding-top: 0; }
