@@ -1,0 +1,23 @@
+# Configuração de deploy no Render.
+# As variáveis marcadas sync:false devem ser preenchidas no painel —
+# nunca versionar segredo aqui.
+
+services:
+  - type: web
+    name: portfolio-felipe-paz
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_TO
+        sync: false

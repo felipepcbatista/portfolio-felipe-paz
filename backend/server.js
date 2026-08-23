@@ -3,13 +3,45 @@ require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// Em produção a aplicação roda atrás do proxy da hospedagem. Sem isto,
+// todas as requisições chegam com o mesmo IP e o rate limit passa a
+// contar todos os visitantes como um só.
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
+// Cabeçalhos de segurança. A CSP libera o Google Fonts, único host
+// externo que a página usa.
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+      scriptSrc: ["'self'"],
+      imgSrc: ["'self'", 'data:'],
+      connectSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      frameAncestors: ["'self'"]
+    }
+  },
+  crossOriginEmbedderPolicy: false
+}));
+
+// O front-end é servido pelo mesmo servidor, então a API não precisa
+// aceitar chamadas de outras origens. ALLOWED_ORIGIN permite liberar
+// um domínio específico caso o front passe a ser hospedado à parte.
+app.use(cors({
+  origin: process.env.ALLOWED_ORIGIN || false
+}));
+
 app.use(express.json({ limit: '10kb' }));
 
 // serve o front-end estático

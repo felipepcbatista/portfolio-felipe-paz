@@ -54,6 +54,7 @@ editável diretamente e o deploy simples.
 | **express-rate-limit** | Limite de 5 envios por IP a cada 15 minutos |
 | **dotenv** | Variáveis de ambiente |
 | **cors** | Controle de origem das requisições |
+| **helmet** | Cabeçalhos de segurança (CSP, HSTS, X-Frame-Options) |
 
 ---
 
@@ -69,14 +70,18 @@ portfolio/
 │   │   ├── layout.css      # Nav, hero, métricas, trajetória, contato, footer
 │   │   └── cases.css       # Painéis de case, KPIs, tabelas, ressalvas, formação
 │   ├── js/
-│   │   ├── i18n.js         # Dicionário PT/EN (188 chaves)
+│   │   ├── i18n.js         # Dicionário PT/EN (192 chaves)
 │   │   └── main.js         # i18n, canvas, nav, reveal, contadores, formulário
 │   └── assets/
-│       └── foto-perfil.jpg
+│       ├── foto-perfil.jpg
+│       ├── cv/             # Currículo em PDF
+│       └── projetos/       # Imagens dos projetos
 ├── backend/
 │   ├── server.js           # API Express + envio de e-mail
 │   ├── package.json
 │   └── .env.example        # Modelo das variáveis de ambiente
+├── docs/wireframes/        # Protótipos do Figma
+├── render.yaml             # Configuração de deploy
 ├── .gitignore
 └── README.md
 ```
@@ -93,8 +98,8 @@ portfolio/
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/felipepcbatista/portfolio.git
-cd portfolio
+git clone https://github.com/felipepcbatista/portfolio-felipe-paz.git
+cd portfolio-felipe-paz
 
 # 2. Instale as dependências do back-end
 cd backend
@@ -118,6 +123,8 @@ Acesse **http://localhost:3000**. O servidor Express serve o front-end estático
 | `EMAIL_PASS` | Senha de app do Gmail (16 caracteres) | Sim |
 | `EMAIL_TO` | Destino das mensagens (padrão: `EMAIL_USER`) | Não |
 | `PORT` | Porta do servidor (padrão: 3000) | Não |
+| `NODE_ENV` | `production` na hospedagem — ativa o `trust proxy` | Em produção |
+| `ALLOWED_ORIGIN` | Só se o front for hospedado em outro domínio | Não |
 
 > A senha de app **não** é a senha da conta Google. Gere em
 > *Conta Google → Segurança → Verificação em duas etapas → Senhas de app*.
@@ -152,7 +159,11 @@ Recebe a mensagem do formulário e encaminha por e-mail.
 **Proteções implementadas:**
 - Validação no cliente e no servidor
 - Honeypot (campo invisível que bots preenchem)
-- Rate limit por IP
+- Rate limit de 5 envios por IP a cada 15 minutos
+- CORS restrito à própria origem — a API não aceita chamadas de outros domínios
+- Cabeçalhos de segurança via `helmet`, com CSP liberando apenas o Google Fonts
+- `trust proxy` em produção, para o rate limit contar o IP real do visitante em vez
+  do IP do proxy da hospedagem
 - `replyTo` com o e-mail do visitante, evitando que o Gmail marque como spoofing
 
 ---
@@ -175,7 +186,7 @@ rate limit e tratamento de erro sob controle da aplicação.
 
 **Bilíngue em todo o site, não apenas no "Sobre mim".** O idioma é detectado a partir do
 navegador e pode ser alternado a qualquer momento, com a preferência persistida no
-`localStorage`. São 188 chaves de tradução cobrindo inclusive a narrativa completa dos cases.
+`localStorage`. São 192 chaves de tradução cobrindo inclusive a narrativa completa dos cases.
 
 ---
 
