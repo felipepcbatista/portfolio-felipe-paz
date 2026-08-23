@@ -15,9 +15,10 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: EMAIL_USER
+      # Envio por API HTTP — o Render bloqueia portas de SMTP
+      - key: RESEND_API_KEY
         sync: false
-      - key: EMAIL_PASS
+      - key: RESEND_FROM
         sync: false
       - key: EMAIL_TO
         sync: false

@@ -82,11 +82,64 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
     return res.status(400).json({ error: erros.join(' ') });
   }
 
-  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-    console.error('EMAIL_USER ou EMAIL_PASS ausentes no ambiente.');
-    return res.status(500).json({ error: 'Serviço de e-mail indisponível no momento.' });
-  }
+  const limpo = (s) => String(s).trim().slice(0, 5000);
+  const destino = process.env.EMAIL_TO || process.env.EMAIL_USER;
 
+  const assunto = `Contato pelo portfólio — ${limpo(nome)}`;
+  const corpo = `Nome: ${limpo(nome)}\nE-mail: ${limpo(email)}\n\nMensagem:\n${limpo(mensagem)}`;
+  const respondePara = `${limpo(nome)} <${limpo(email)}>`;
+
+  try {
+    if (process.env.RESEND_API_KEY) {
+      await enviarViaResend({ destino, assunto, corpo, respondePara });
+    } else if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      await enviarViaSmtp({ destino, assunto, corpo, respondePara });
+    } else {
+      console.error('Nenhum método de envio configurado (RESEND_API_KEY ou EMAIL_USER/EMAIL_PASS).');
+      return res.status(500).json({ error: 'Serviço de e-mail indisponível no momento.' });
+    }
+
+    res.status(200).json({ message: 'Mensagem enviada com sucesso.' });
+  } catch (err) {
+    console.error('Falha ao enviar e-mail:', err.message);
+    res.status(500).json({ error: 'Não foi possível enviar agora. Tente novamente ou use o e-mail direto.' });
+  }
+});
+
+/**
+ * Envio via API HTTP do Resend.
+ * Usado em produção: hospedagens gratuitas costumam bloquear as portas
+ * de SMTP (25, 465, 587), e uma chamada HTTPS comum não esbarra nisso.
+ */
+async function enviarViaResend({ destino, assunto, corpo, respondePara }) {
+  const remetente = process.env.RESEND_FROM || 'Portfólio <onboarding@resend.dev>';
+
+  const resposta = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      from: remetente,
+      to: [destino],
+      reply_to: respondePara,
+      subject: assunto,
+      text: corpo
+    })
+  });
+
+  if (!resposta.ok) {
+    const detalhe = await resposta.text();
+    throw new Error(`Resend respondeu ${resposta.status}: ${detalhe}`);
+  }
+}
+
+/**
+ * Envio via SMTP do Gmail. Mantido para desenvolvimento local, onde
+ * as portas de SMTP estão liberadas.
+ */
+async function enviarViaSmtp({ destino, assunto, corpo, respondePara }) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -95,23 +148,14 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
     }
   });
 
-  const limpo = (s) => String(s).trim().slice(0, 5000);
-
-  try {
-    await transporter.sendMail({
-      from: `"Portfólio — contato" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO || process.env.EMAIL_USER,
-      replyTo: `${limpo(nome)} <${limpo(email)}>`,
-      subject: `Contato pelo portfólio — ${limpo(nome)}`,
-      text: `Nome: ${limpo(nome)}\nE-mail: ${limpo(email)}\n\nMensagem:\n${limpo(mensagem)}`
-    });
-
-    res.status(200).json({ message: 'Mensagem enviada com sucesso.' });
-  } catch (err) {
-    console.error('Falha ao enviar e-mail:', err.message);
-    res.status(500).json({ error: 'Não foi possível enviar agora. Tente novamente ou use o e-mail direto.' });
-  }
-});
+  await transporter.sendMail({
+    from: `"Portfólio — contato" <${process.env.EMAIL_USER}>`,
+    to: destino,
+    replyTo: respondePara,
+    subject: assunto,
+    text: corpo
+  });
+}
 
 // qualquer outra rota devolve o front-end
 app.use((req, res) => {

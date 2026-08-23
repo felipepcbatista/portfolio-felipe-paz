@@ -3,7 +3,7 @@
 Website de portfólio profissional bilíngue (PT/EN), desenvolvido para a disciplina
 **Projeto de Software** — Laboratório 1, Engenharia de Software, PUC Minas (2º semestre/2026).
 
-🔗 **Site publicado:** _(a ser preenchido na Sprint 3)_
+🔗 **Site publicado:** https://portfolio-felipe-paz.onrender.com
 
 ---
 
@@ -50,7 +50,8 @@ editável diretamente e o deploy simples.
 |---|---|
 | **Node.js** (≥18) | Runtime |
 | **Express** | Servidor HTTP e rotas |
-| **Nodemailer** | Envio das mensagens do formulário por e-mail |
+| **Resend** | Envio das mensagens em produção, via API HTTP |
+| **Nodemailer** | Envio via SMTP em desenvolvimento local |
 | **express-rate-limit** | Limite de 5 envios por IP a cada 15 minutos |
 | **dotenv** | Variáveis de ambiente |
 | **cors** | Controle de origem das requisições |
@@ -119,9 +120,11 @@ Acesse **http://localhost:3000**. O servidor Express serve o front-end estático
 
 | Variável | Descrição | Obrigatória |
 |---|---|---|
-| `EMAIL_USER` | Conta Gmail que envia as mensagens | Sim |
-| `EMAIL_PASS` | Senha de app do Gmail (16 caracteres) | Sim |
-| `EMAIL_TO` | Destino das mensagens (padrão: `EMAIL_USER`) | Não |
+| `RESEND_API_KEY` | Chave da API do Resend — usada em produção | Em produção |
+| `RESEND_FROM` | Remetente (padrão: `onboarding@resend.dev`) | Não |
+| `EMAIL_TO` | Destino das mensagens | Com Resend, sim |
+| `EMAIL_USER` | Conta Gmail — usada só localmente | Local |
+| `EMAIL_PASS` | Senha de app do Gmail (16 caracteres) | Local |
 | `PORT` | Porta do servidor (padrão: 3000) | Não |
 | `NODE_ENV` | `production` na hospedagem — ativa o `trust proxy` | Em produção |
 | `ALLOWED_ORIGIN` | Só se o front for hospedado em outro domínio | Não |
@@ -183,6 +186,13 @@ alterar `tokens.css` muda a identidade visual da página inteira.
 **Back-end próprio em vez de serviço de formulário.** Serviços como Formspree resolveriam o
 envio sem código, mas a disciplina é Projeto de Software: um servidor próprio permite validação,
 rate limit e tratamento de erro sob controle da aplicação.
+
+**Dois métodos de envio, escolhidos em tempo de execução.** Hospedagens gratuitas bloqueiam as
+portas de SMTP (25, 465, 587) como política antispam — o Nodemailer conecta, fica preso até o
+timeout e falha. Em produção o envio passa pela API HTTP do Resend, que não esbarra nesse
+bloqueio; localmente, onde as portas estão liberadas, o SMTP do Gmail continua funcionando. O
+servidor detecta qual usar pela presença de `RESEND_API_KEY`, sem alterar o restante do fluxo
+(validação, honeypot e rate limit são os mesmos).
 
 **Bilíngue em todo o site, não apenas no "Sobre mim".** O idioma é detectado a partir do
 navegador e pode ser alternado a qualquer momento, com a preferência persistida no
