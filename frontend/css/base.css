@@ -248,7 +248,7 @@ p, li, h1, h2, h3, .kpi-detail, .caveat span, .cred p {
   /* hero: menos respiro no topo, foto menor.
      width em vw garante o limite mesmo com aspect-ratio no slot */
   .hero { padding-block: 5.5rem 2.5rem; min-height: auto; }
-  .portrait-slot { width: min(70vw, 15rem); }
+  .portrait-slot { width: min(78vw, 19rem); }
 
   /* alvo de toque mínimo de 44px nos botões principais */
   .btn { padding: 0.8rem 1.5rem; }

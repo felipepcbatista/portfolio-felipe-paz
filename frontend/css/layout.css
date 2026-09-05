@@ -179,7 +179,7 @@ nav.stuck {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
@@ -225,7 +225,7 @@ nav.stuck {
 .portrait-slot {
   position: relative;
   aspect-ratio: 1;
-  width: min(100%, 20rem);
+  width: min(100%, 23rem);
   max-width: 100%;
   justify-self: center;
   border-radius: 50%;
