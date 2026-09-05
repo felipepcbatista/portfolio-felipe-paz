@@ -54,17 +54,17 @@ window.I18N = {
 
 
 
-    'leg1.when': '2º sem · 2025',
-    'leg1.title': 'Mentor · Engenharia de Software (PUC Minas)',
-    'leg1.text': 'Acompanhamento de 4 calouros ao longo do semestre no programa de mentoria do curso — apoio à adaptação à rotina acadêmica e orientação sobre caminhos de carreira em tecnologia, traduzindo o conteúdo do curso em direcionamento para o mercado.',
+    'leg3.when': 'ago — dez 2025',
+    'leg3.title': 'Mentor · Engenharia de Software (PUC Minas)',
+    'leg3.text': 'Acompanhamento de 4 calouros ao longo do semestre no programa de mentoria do curso — apoio à adaptação à rotina acadêmica e orientação sobre caminhos de carreira em tecnologia, traduzindo o conteúdo do curso em direcionamento para o mercado.',
 
-    'leg2.when': 'Produto',
+    'leg2.when': 'nov 2025 — mai 2026',
     'leg2.title': 'Estágio em Gestão de Produtos',
     'leg2.text': 'Duas frentes. Em <strong>billing</strong>: especificação e construção de features de cobrança e do modelo de negócio de créditos, com contato direto com cliente final. Na <strong>squad de Retenção</strong>, como Associate Product Manager: estratégias de redução de churn tratando <strong>engajamento como leading metric</strong> — o indicador que se move antes do cancelamento e permite agir enquanto ainda há o que reverter —, com condução de dailies, apoio a PRDs e análise de dado para sustentar priorização.',
 
-    'leg3.when': 'Financial Ops · atual',
-    'leg3.title': 'Estágio em Financial Ops',
-    'leg3.text': 'Rotina de cobrança, conciliação e atendimento às demandas financeiras internas — e, a partir dela, a reforma dos dois processos que mais consumiam a operação, com <strong>−77% na carga de execução manual</strong> e <strong>−89% nas demandas de reemissão de link</strong>. Modelagem de métricas de negócio (MRR, NMRR, GRR, churn, collections) e construção da camada de BI que dá ao time acesso autônomo a essas leituras.',
+    'leg1.when': 'jun 2026 — atual',
+    'leg1.title': 'Estágio em Financial Ops',
+    'leg1.text': 'Rotina de cobrança, conciliação e atendimento às demandas financeiras internas — e, a partir dela, a reforma dos dois processos que mais consumiam a operação, com <strong>−77% na carga de execução manual</strong> e <strong>−89% nas demandas de reemissão de link</strong>. Modelagem de métricas de negócio (MRR, NMRR, GRR, churn, collections) e construção da camada de BI que dá ao time acesso autônomo a essas leituras.',
 
 
     /* --- cases --- */
@@ -255,17 +255,17 @@ window.I18N = {
 
 
 
-    'leg1.when': '2nd semester · 2025',
-    'leg1.title': 'Mentor · Software Engineering (PUC Minas)',
-    'leg1.text': 'Mentored 4 first-year students throughout the semester in the programme\'s mentorship initiative — supporting their adaptation to academic life and advising on career paths in technology, translating coursework into direction for the job market.',
+    'leg3.when': 'Aug — Dec 2025',
+    'leg3.title': 'Mentor · Software Engineering (PUC Minas)',
+    'leg3.text': 'Mentored 4 first-year students throughout the semester in the programme\'s mentorship initiative — supporting their adaptation to academic life and advising on career paths in technology, translating coursework into direction for the job market.',
 
-    'leg2.when': 'Product',
+    'leg2.when': 'Nov 2025 — May 2026',
     'leg2.title': 'Product Management Intern',
     'leg2.text': 'Two fronts. In <strong>billing</strong>: specification and delivery of billing features and the credit-based business model, with direct contact with end customers. In the <strong>Retention squad</strong>, as Associate Product Manager: churn-reduction strategies treating <strong>engagement as a leading metric</strong> — the indicator that moves before cancellation and allows action while there is still something to recover — running dailies, supporting PRDs and analysing data to back prioritisation.',
 
-    'leg3.when': 'Financial Ops · current',
-    'leg3.title': 'Financial Ops Intern',
-    'leg3.text': 'Billing, reconciliation and internal financial request handling — and, from there, the overhaul of the two processes consuming most of the operation, with <strong>−77% in manual execution load</strong> and <strong>−89% in payment-link reissue requests</strong>. Business metric modelling (MRR, NMRR, GRR, churn, collections) and construction of the BI layer that gives the team autonomous access to those readings.',
+    'leg1.when': 'Jun 2026 — present',
+    'leg1.title': 'Financial Ops Intern',
+    'leg1.text': 'Billing, reconciliation and internal financial request handling — and, from there, the overhaul of the two processes consuming most of the operation, with <strong>−77% in manual execution load</strong> and <strong>−89% in payment-link reissue requests</strong>. Business metric modelling (MRR, NMRR, GRR, churn, collections) and construction of the BI layer that gives the team autonomous access to those readings.',
 
 
     /* --- cases --- */
