@@ -52,30 +52,20 @@ window.I18N = {
     'traj.intro1': 'Comecei em <strong>Gestão de Produtos</strong>, no domínio de billing — construindo features de cobrança e do modelo de negócio. Migrei para <strong>Financial Ops</strong>, onde passei a operar o outro lado do que eu mesmo tinha construído: a rotina que sente o efeito de cada decisão de produto.',
     'traj.intro2': 'Hoje opero sobre métricas financeiras, análise de dados e processos de negócio — gerenciando o ciclo de ponta a ponta: modelagem, levantamento de dados, otimização e medição.',
 
-    'leg1.when': 'ago — set · 2025',
-    'leg1.title': 'Gerente de Projeto · Employ.me',
-    'leg1.repo': 'Ver repositório',
-    'leg1.text': 'Concepção de uma plataforma de empregabilidade jovem em tecnologia no Desafio Liga Jovem do SEBRAE. Discovery estruturado (matriz CSD, personas, mapa de empatia, proposta de valor), documentação em One Pager e PRDs, backlog priorizado por MoSCoW e protótipo interativo — com modelo de negócio híbrido, freemium B2C e institucional B2B. MVP conceitual, não chegou a produção.',
 
-    'leg2.when': '2025 — 2026',
-    'leg2.title': 'Product Owner · DuZé Pesqueiro (PUC Minas)',
-    'leg2.text': 'Condução de produto de ponta a ponta para um cliente externo real, ao longo de dois semestres — elicitação de requisitos, backlog priorizado, modelagem de processos e alinhamento direto com o proprietário do negócio. Premiado como melhor Trabalho Interdisciplinar do curso.',
 
-    'leg3.when': '2º sem · 2025',
-    'leg3.title': 'Mentor · Engenharia de Software (PUC Minas)',
-    'leg3.text': 'Acompanhamento de 4 calouros ao longo do semestre no programa de mentoria do curso — apoio à adaptação à rotina acadêmica e orientação sobre caminhos de carreira em tecnologia, traduzindo o conteúdo do curso em direcionamento para o mercado.',
+    'leg1.when': '2º sem · 2025',
+    'leg1.title': 'Mentor · Engenharia de Software (PUC Minas)',
+    'leg1.text': 'Acompanhamento de 4 calouros ao longo do semestre no programa de mentoria do curso — apoio à adaptação à rotina acadêmica e orientação sobre caminhos de carreira em tecnologia, traduzindo o conteúdo do curso em direcionamento para o mercado.',
 
-    'leg4.when': 'Produto',
-    'leg4.title': 'Estágio em Gestão de Produtos',
-    'leg4.text': 'Duas frentes. Em <strong>billing</strong>: especificação e construção de features de cobrança e do modelo de negócio de créditos, com contato direto com cliente final. Na <strong>squad de Retenção</strong>, como Associate Product Manager: estratégias de redução de churn tratando <strong>engajamento como leading metric</strong> — o indicador que se move antes do cancelamento e permite agir enquanto ainda há o que reverter —, com condução de dailies, apoio a PRDs e análise de dado para sustentar priorização.',
+    'leg2.when': 'Produto',
+    'leg2.title': 'Estágio em Gestão de Produtos',
+    'leg2.text': 'Duas frentes. Em <strong>billing</strong>: especificação e construção de features de cobrança e do modelo de negócio de créditos, com contato direto com cliente final. Na <strong>squad de Retenção</strong>, como Associate Product Manager: estratégias de redução de churn tratando <strong>engajamento como leading metric</strong> — o indicador que se move antes do cancelamento e permite agir enquanto ainda há o que reverter —, com condução de dailies, apoio a PRDs e análise de dado para sustentar priorização.',
 
-    'leg5.when': 'Financial Ops · atual',
-    'leg5.title': 'Estágio em Financial Ops',
-    'leg5.text': 'Rotina de cobrança, conciliação e atendimento às demandas financeiras internas — e, a partir dela, a reforma dos dois processos que mais consumiam a operação, com <strong>−77% na carga de execução manual</strong> e <strong>−89% nas demandas de reemissão de link</strong>. Modelagem de métricas de negócio (MRR, NMRR, GRR, churn, collections) e construção da camada de BI que dá ao time acesso autônomo a essas leituras.',
+    'leg3.when': 'Financial Ops · atual',
+    'leg3.title': 'Estágio em Financial Ops',
+    'leg3.text': 'Rotina de cobrança, conciliação e atendimento às demandas financeiras internas — e, a partir dela, a reforma dos dois processos que mais consumiam a operação, com <strong>−77% na carga de execução manual</strong> e <strong>−89% nas demandas de reemissão de link</strong>. Modelagem de métricas de negócio (MRR, NMRR, GRR, churn, collections) e construção da camada de BI que dá ao time acesso autônomo a essas leituras.',
 
-    'leg6.when': 'Em curso',
-    'leg6.title': 'Operações e negócio',
-    'leg6.text': 'Direção declarada: eficiência operacional com lastro em dado. O objetivo não é acumular ferramenta — é chegar ao ponto em que decisão de operação e decisão de negócio sejam a mesma conversa.',
 
     /* --- cases --- */
     'cases.eyebrow': 'Cases',
@@ -263,30 +253,20 @@ window.I18N = {
     'traj.intro1': 'I started in <strong>Product Management</strong>, in the billing domain — building billing and business-model features. I then moved to <strong>Financial Ops</strong>, where I began operating the other side of what I had built: the routine that feels the effect of every product decision.',
     'traj.intro2': 'Today I work across financial metrics, data analysis and business processes — managing the full cycle: modelling, data gathering, optimisation and measurement.',
 
-    'leg1.when': 'Aug — Sep · 2025',
-    'leg1.title': 'Project Manager · Employ.me',
-    'leg1.repo': 'View repository',
-    'leg1.text': 'Conception of a youth employability platform for the tech sector, built for SEBRAE\'s Liga Jovem Challenge. Structured discovery (CSD matrix, personas, empathy map, value proposition), documentation in One Pager and PRDs, backlog prioritised with MoSCoW and an interactive prototype — with a hybrid business model: freemium B2C and institutional B2B. Conceptual MVP, never reached production.',
 
-    'leg2.when': '2025 — 2026',
-    'leg2.title': 'Product Owner · DuZé Pesqueiro (PUC Minas)',
-    'leg2.text': 'End-to-end product leadership for a real external client across two semesters — requirements elicitation, prioritised backlog, process modelling and direct alignment with the business owner. Awarded best Interdisciplinary Project of the programme.',
 
-    'leg3.when': '2nd semester · 2025',
-    'leg3.title': 'Mentor · Software Engineering (PUC Minas)',
-    'leg3.text': 'Mentored 4 first-year students throughout the semester in the programme\'s mentorship initiative — supporting their adaptation to academic life and advising on career paths in technology, translating coursework into direction for the job market.',
+    'leg1.when': '2nd semester · 2025',
+    'leg1.title': 'Mentor · Software Engineering (PUC Minas)',
+    'leg1.text': 'Mentored 4 first-year students throughout the semester in the programme\'s mentorship initiative — supporting their adaptation to academic life and advising on career paths in technology, translating coursework into direction for the job market.',
 
-    'leg4.when': 'Product',
-    'leg4.title': 'Product Management Intern',
-    'leg4.text': 'Two fronts. In <strong>billing</strong>: specification and delivery of billing features and the credit-based business model, with direct contact with end customers. In the <strong>Retention squad</strong>, as Associate Product Manager: churn-reduction strategies treating <strong>engagement as a leading metric</strong> — the indicator that moves before cancellation and allows action while there is still something to recover — running dailies, supporting PRDs and analysing data to back prioritisation.',
+    'leg2.when': 'Product',
+    'leg2.title': 'Product Management Intern',
+    'leg2.text': 'Two fronts. In <strong>billing</strong>: specification and delivery of billing features and the credit-based business model, with direct contact with end customers. In the <strong>Retention squad</strong>, as Associate Product Manager: churn-reduction strategies treating <strong>engagement as a leading metric</strong> — the indicator that moves before cancellation and allows action while there is still something to recover — running dailies, supporting PRDs and analysing data to back prioritisation.',
 
-    'leg5.when': 'Financial Ops · current',
-    'leg5.title': 'Financial Ops Intern',
-    'leg5.text': 'Billing, reconciliation and internal financial request handling — and, from there, the overhaul of the two processes consuming most of the operation, with <strong>−77% in manual execution load</strong> and <strong>−89% in payment-link reissue requests</strong>. Business metric modelling (MRR, NMRR, GRR, churn, collections) and construction of the BI layer that gives the team autonomous access to those readings.',
+    'leg3.when': 'Financial Ops · current',
+    'leg3.title': 'Financial Ops Intern',
+    'leg3.text': 'Billing, reconciliation and internal financial request handling — and, from there, the overhaul of the two processes consuming most of the operation, with <strong>−77% in manual execution load</strong> and <strong>−89% in payment-link reissue requests</strong>. Business metric modelling (MRR, NMRR, GRR, churn, collections) and construction of the BI layer that gives the team autonomous access to those readings.',
 
-    'leg6.when': 'Ongoing',
-    'leg6.title': 'Operations and business',
-    'leg6.text': 'Stated direction: operational efficiency grounded in data. The goal is not to collect tools — it is to reach the point where operational and business decisions are the same conversation.',
 
     /* --- cases --- */
     'cases.eyebrow': 'Case studies',
